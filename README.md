@@ -8,7 +8,7 @@
 
 ## Team
 
-- Sean Pham (Full Stack Developer)
+- Sean Pham (Full Stack Developer, Git Manager)
 - Abdusalam Abdusalamov (Full Stack Developer, Git Manager)
 
 ## Technologies Used
