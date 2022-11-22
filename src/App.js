@@ -13,6 +13,9 @@ import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 
+//importing menu page
+import MenuPage from './components/MenuPage'
+
 const App = () => {
 
   const [user, setUser] = useState(null)
@@ -68,6 +71,12 @@ const App = () => {
                 <ChangePassword msgAlert={msgAlert} user={user} />
               </RequireAuth>}
           />
+		  <Route
+		  	path='/menu'
+			element={
+				<MenuPage/>
+			} 
+		  />
 				</Routes>
 				{msgAlerts.map((msgAlert) => (
 					<AutoDismissAlert

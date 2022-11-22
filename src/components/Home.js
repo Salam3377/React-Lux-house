@@ -1,6 +1,6 @@
 import '../components/home.css'
 import logo from '../logo.png'; // with import
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 const Home = (props) => {
 	// const { msgAlert, user } = props
@@ -11,7 +11,7 @@ const Home = (props) => {
 			<div id="body-div">
 				<div id='header-box'>
 					<div id="header-div">
-						<img id='logo-img' src={logo} />
+						<img id='logo-img' src={logo} alt="logo" />
 						<h1>Lux-House</h1>
 						<h3>Craft Coffee and more...</h3>
 					</div>
@@ -26,13 +26,13 @@ const Home = (props) => {
 				<div id="menu-line-div">
 						<ul id='ul-menu-line-div'>
 							<li class="list-2"><a class='a' href="/">Home</a></li>
-							<li class="list-2"><a class='a' href="">Menu</a></li>
-							<li class="list-2"><a class='a' href="">About</a></li>
-							<li class="list-2"><a class='a' href="">Contact Us</a></li>
+							<li class="list-2"><a class='a' href="/menu">Menu</a></li>
+							<li class="list-2"><a class='a' href="/">About</a></li>
+							<li class="list-2"><a class='a' href="/">Contact Us</a></li>
 						</ul>
 				</div>
 				<div id="main-pic-div">
-					<img id='main-pic' src='https://cdn.mos.cms.futurecdn.net/Zqgq9Dnoutqd2wv7xFqRv8.jpg' />
+					<img id='main-pic' src='https://cdn.mos.cms.futurecdn.net/Zqgq9Dnoutqd2wv7xFqRv8.jpg' alt='main-coffee-shop' />
 				</div>
 				<div></div>
 				<div>
