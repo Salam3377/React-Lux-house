@@ -1,3 +1,20 @@
 #menu-cart-img {
     width: 100px;
 }
+#card {
+    display: inline-block;
+}
+#menu-card {
+    margin-top: 50px;
+}
+#card-div{
+    display: inline-block;
+}
+#menu-img {
+    max-height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+#menu-img-div {
+    text-align: center;
+}

@@ -21,21 +21,25 @@ const MenuPage = ({ msgAlert }) => {
             })
         })
     }, [])
-
-    const menuCards = allMenu.map(menuItem => (
-        <Card key={ menuItem.id } style={{ width: '30%', margin: 5 }}>
-            <Card.Header>{ menuItem.name }</Card.Header>
-            <Card.Body>
-                <Card.Text>
-                    {menuItem.description}
-                    {menuItem.price}
-                    <img id="menu-cart-img" src="https://t3.ftcdn.net/jpg/01/23/41/76/360_F_123417653_U1HQPWgXlch50hv1a9giz9KBzb4mrnwB.jpg" /> 
-                </Card.Text>
-            </Card.Body>
-        </Card>
+    //Coffee  map function down here
+    let coffeeList = []
+    const coffeeFilter = allMenu.filter(elem => {
+        if(elem.name ==='latte') {
+            coffeeList.push(elem)
+        }
+    })
+    const menuCards = coffeeList.map(menuItem => (
+            <Card id="card" key={ menuItem.id } style={{ width: '30%', margin: 20 }}>
+                <Card.Header>{ menuItem.name }</Card.Header>
+                <Card.Body>
+                    <Card.Text>
+                        {menuItem.description}
+                        {menuItem.price}
+                        <img id="menu-cart-img" src="https://t3.ftcdn.net/jpg/01/23/41/76/360_F_123417653_U1HQPWgXlch50hv1a9giz9KBzb4mrnwB.jpg" /> 
+                    </Card.Text>
+                </Card.Body>
+            </Card>
         ))
-
-
     return(
         <>
         <div id="body-div">
@@ -61,9 +65,31 @@ const MenuPage = ({ msgAlert }) => {
 							<li class="list-2"><a class='a' href="/">Contact Us</a></li>
 						</ul>
 				</div>
-                <div id="menu-cards">
+                <div id="menu-img-div">
+                    <img id="menu-img" src="https://thepointsguy.global.ssl.fastly.net/uk/originals/2021/09/20210930_Mondrian-Shoreditch-Hotel-London-Accor_BSmithson-86.jpg" />
+                </div>
+                <h3>BreakFast</h3>
+                <div id="menu-card">
+                    {}
+                </div>
+                <h3>Lunch</h3>
+                <div id="menu-card">
                     { menuCards }
                 </div>
+                <h3>Drinks</h3>
+                <h4>Coffee</h4>
+                <div id="menu-card">
+                    { menuCards }
+                </div>
+                <h4>Tea</h4>
+                <div id="menu-card">
+                    { menuCards }
+                </div>
+                <h3>Desserts</h3>
+                <div id="menu-card">
+                    { menuCards }
+                </div>
+                
         </div>
         </>
     )
