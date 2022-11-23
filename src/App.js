@@ -74,7 +74,7 @@ const App = () => {
 		  <Route
 		  	path='/menu'
 			element={
-				<MenuPage/>
+				<MenuPage msgAlert={msgAlert}/>
 			} 
 		  />
 				</Routes>
