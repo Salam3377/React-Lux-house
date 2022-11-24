@@ -1,0 +1,72 @@
+#body-div {
+    /* background-color: aqua; */
+    width: 1250px;
+    height: 2000px;
+    margin: auto;
+}
+#header-box {
+    display: flex;
+    position: relative;
+}
+#header-div {
+    /* background-color: yellow; */
+    width: 350px;
+    height: 250px;
+    margin: auto;
+    text-align: center;
+}
+#right-menu-div {
+   background-color: white;
+   width: 300px;
+   height: 50px;
+   position: absolute;
+    right: 10px;
+    top: 75px;
+}
+#menu-line-div {
+    /* background-color: red; */
+    width: 500px;
+    height: 50px;
+    margin: auto;
+    margin-top: 20px;
+}
+#main-pic-div {
+    background-color: rgb(240, 127, 255);
+    width: 1200px;
+    height: 500px;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+#logo-img {
+    width: 150px;
+}
+#ul-right-menu-div {
+    list-style-type: none;
+    display: flex;
+    margin-left: 70px;
+    font-size: 20px;
+}
+.list {
+    padding-left: 10px;
+    padding-top: 10px;
+}
+#ul-menu-line-div {
+    list-style-type: none;
+    display: flex;
+    margin-left: 20px;
+    font-size: 25px;
+}
+.list-2 {
+    padding-left: 20px;
+    padding-top: 5px;
+}
+.a {
+    color: black;
+    text-decoration: none;
+}
+/* till here header of page which will be same for all pages */
+#main-pic {
+    width: 1200px;
+    height: 700px;
+}

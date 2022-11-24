@@ -1,0 +1,44 @@
+#menu-cart-img {
+    width: 100px;
+}
+#card {
+    display: inline-block;
+    width: 585px;
+    height: 150px;
+    position: relative;
+    border: 1px solid rgb(162, 157, 157);
+}
+#box-menu-cards {
+    margin-top: 50px;
+    margin-left: 15px;
+}
+#card-div{
+    display: inline-block;
+}
+#menu-img {
+    max-height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+#menu-img-div {
+    text-align: center;
+}
+#menu-cart-img {
+    position: absolute;
+    right: 10px;
+}
+.price-p1 {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+}
+.description-p1 {
+    position: absolute;
+    left: 15px;
+    top: 50px;
+}
+#card-header {
+    padding: 5px 10px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(162, 157, 157);
+}
