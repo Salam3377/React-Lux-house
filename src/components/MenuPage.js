@@ -29,12 +29,12 @@ const MenuPage = ({ msgAlert }) => {
         }
     })
     const menuCards = coffeeList.map(menuItem => (
-            <Card id="card" key={ menuItem.id } style={{ width: '30%', margin: 20 }}>
-                <Card.Header>{ menuItem.name }</Card.Header>
-                <Card.Body>
-                    <Card.Text>
-                        {menuItem.description}
-                        {menuItem.price}
+            <Card id="card" key={ menuItem.id } style={{ margin: 10 }}>
+                <Card.Header id="card-header">{ menuItem.name }</Card.Header>
+                <Card.Body class="card-body">
+                    <Card.Text class="card-text">
+                        <p1 class="description-p1">{menuItem.description}</p1>
+                        <p1 class="price-p1">{menuItem.price}</p1>
                         <img id="menu-cart-img" src="https://t3.ftcdn.net/jpg/01/23/41/76/360_F_123417653_U1HQPWgXlch50hv1a9giz9KBzb4mrnwB.jpg" /> 
                     </Card.Text>
                 </Card.Body>
@@ -69,7 +69,7 @@ const MenuPage = ({ msgAlert }) => {
                     <img id="menu-img" src="https://thepointsguy.global.ssl.fastly.net/uk/originals/2021/09/20210930_Mondrian-Shoreditch-Hotel-London-Accor_BSmithson-86.jpg" />
                 </div>
                 <h3>BreakFast</h3>
-                <div id="menu-card">
+                <div id="box-menu-cards">
                     {}
                 </div>
                 <h3>Lunch</h3>
