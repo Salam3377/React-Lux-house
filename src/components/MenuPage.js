@@ -28,14 +28,14 @@ const MenuPage = ({ msgAlert }) => {
             coffeeList.push(elem)
         }
     })
-    const menuCoffeeCards = coffeeList.map(menuItem => (
+    const menuCoffeeCards = coffeeList.map((menuItem, i) => (
             <Card id="card" key={ menuItem.id } style={{ margin: 10 }}>
                 <Card.Header id="card-header">{ menuItem.name }</Card.Header>
                 <Card.Body class="card-body">
                     <Card.Text class="card-text">
                         <p1 class="description-p1">{menuItem.description}</p1>
                         <p1 class="price-p1">{menuItem.price}</p1>
-                        <img id="menu-cart-img" src="https://t3.ftcdn.net/jpg/01/23/41/76/360_F_123417653_U1HQPWgXlch50hv1a9giz9KBzb4mrnwB.jpg" /> 
+                        <img id="menu-cart-img" src={ require(`../coffeeImages/img${i}.jpg`).default } /> 
                     </Card.Text>
                 </Card.Body>
             </Card>
@@ -48,6 +48,46 @@ const MenuPage = ({ msgAlert }) => {
         }
     })
     const menuTeaCards = teaList.map(menuItem => (
+            <Card id="card" key={ menuItem.id } style={{ margin: 10 }}>
+                <Card.Header id="card-header">{ menuItem.name }</Card.Header>
+                <Card.Body class="card-body">
+                    <Card.Text class="card-text">
+                        <p1 class="description-p1">{menuItem.description}</p1>
+                        <p1 class="price-p1">{menuItem.price}</p1>
+                        <img id="menu-cart-img" src="https://t3.ftcdn.net/jpg/01/23/41/76/360_F_123417653_U1HQPWgXlch50hv1a9giz9KBzb4mrnwB.jpg" /> 
+                    </Card.Text>
+                </Card.Body>
+            </Card>
+        ))
+    
+    //Desserts  map function down here
+    let dessertList = []
+    const dessertFilter = allMenu.filter(elem => {
+        if(elem.menu_type ==='dessert') {
+            dessertList.push(elem)
+        }
+    })
+    const menuDessertCards = dessertList.map(menuItem => (
+            <Card id="card" key={ menuItem.id } style={{ margin: 10 }}>
+                <Card.Header id="card-header">{ menuItem.name }</Card.Header>
+                <Card.Body class="card-body">
+                    <Card.Text class="card-text">
+                        <p1 class="description-p1">{menuItem.description}</p1>
+                        <p1 class="price-p1">{menuItem.price}</p1>
+                        <img id="menu-cart-img" src="https://t3.ftcdn.net/jpg/01/23/41/76/360_F_123417653_U1HQPWgXlch50hv1a9giz9KBzb4mrnwB.jpg" /> 
+                    </Card.Text>
+                </Card.Body>
+            </Card>
+        ))
+    
+    //Lunch  map function down here
+    let lunchList = []
+    const lunchFilter = allMenu.filter(elem => {
+        if(elem.menu_type ==='lunch') {
+            lunchList.push(elem)
+        }
+    })
+    const menuLunchCards = lunchList.map(menuItem => (
             <Card id="card" key={ menuItem.id } style={{ margin: 10 }}>
                 <Card.Header id="card-header">{ menuItem.name }</Card.Header>
                 <Card.Body class="card-body">
@@ -81,7 +121,7 @@ const MenuPage = ({ msgAlert }) => {
 						<ul id='ul-menu-line-div'>
 							<li class="list-2"><a class='a' href="/">Home</a></li>
 							<li class="list-2"><a class='a' href="/menu">Menu</a></li>
-							<li class="list-2"><a class='a' href="/">About</a></li>
+							<li class="list-2"><a class='a' href="/about">About</a></li>
 							<li class="list-2"><a class='a' href="/">Contact Us</a></li>
 						</ul>
 				</div>
