@@ -24,11 +24,11 @@ const MenuPage = ({ msgAlert }) => {
     //Coffee  map function down here
     let coffeeList = []
     const coffeeFilter = allMenu.filter(elem => {
-        if(elem.name ==='latte') {
+        if(elem.menu_type ==='coffee') {
             coffeeList.push(elem)
         }
     })
-    const menuCards = coffeeList.map(menuItem => (
+    const menuCoffeeCards = coffeeList.map(menuItem => (
             <Card id="card" key={ menuItem.id } style={{ margin: 10 }}>
                 <Card.Header id="card-header">{ menuItem.name }</Card.Header>
                 <Card.Body class="card-body">
@@ -40,6 +40,26 @@ const MenuPage = ({ msgAlert }) => {
                 </Card.Body>
             </Card>
         ))
+    //Tea  map function down here
+    let teaList = []
+    const teaFilter = allMenu.filter(elem => {
+        if(elem.menu_type ==='tea') {
+            teaList.push(elem)
+        }
+    })
+    const menuTeaCards = teaList.map(menuItem => (
+            <Card id="card" key={ menuItem.id } style={{ margin: 10 }}>
+                <Card.Header id="card-header">{ menuItem.name }</Card.Header>
+                <Card.Body class="card-body">
+                    <Card.Text class="card-text">
+                        <p1 class="description-p1">{menuItem.description}</p1>
+                        <p1 class="price-p1">{menuItem.price}</p1>
+                        <img id="menu-cart-img" src="https://t3.ftcdn.net/jpg/01/23/41/76/360_F_123417653_U1HQPWgXlch50hv1a9giz9KBzb4mrnwB.jpg" /> 
+                    </Card.Text>
+                </Card.Body>
+            </Card>
+        ))
+    
     return(
         <>
         <div id="body-div">
@@ -74,20 +94,20 @@ const MenuPage = ({ msgAlert }) => {
                 </div>
                 <h3>Lunch</h3>
                 <div id="menu-card">
-                    { menuCards }
+                    {}
                 </div>
                 <h3>Drinks</h3>
                 <h4>Coffee</h4>
                 <div id="menu-card">
-                    { menuCards }
+                    { menuCoffeeCards }
                 </div>
                 <h4>Tea</h4>
                 <div id="menu-card">
-                    { menuCards }
+                    { menuTeaCards }
                 </div>
                 <h3>Desserts</h3>
                 <div id="menu-card">
-                    { menuCards }
+                    {}
                 </div>
                 
         </div>

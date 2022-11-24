@@ -6,7 +6,7 @@
     width: 585px;
     height: 150px;
     position: relative;
-    border: 1px solid rgb(53, 51, 51);
+    border: 1px solid rgb(162, 157, 157);
 }
 #box-menu-cards {
     margin-top: 50px;
@@ -39,6 +39,6 @@
 }
 #card-header {
     padding: 5px 10px;
-    color: white;
-    background-color: rgb(53, 53, 53);
+    color: rgb(255, 255, 255);
+    background-color: rgb(162, 157, 157);
 }
