@@ -15,6 +15,7 @@ import ChangePassword from './components/auth/ChangePassword'
 
 //importing menu page
 import MenuPage from './components/MenuPage'
+import About from './components/AboutPage'
 
 const App = () => {
 
@@ -75,6 +76,12 @@ const App = () => {
 		  	path='/menu'
 			element={
 				<MenuPage msgAlert={msgAlert}/>
+			} 
+		  />
+		  <Route
+		  	path='/about'
+			element={
+				<About msgAlert={msgAlert}/>
 			} 
 		  />
 				</Routes>

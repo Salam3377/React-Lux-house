@@ -70,3 +70,24 @@
     width: 1200px;
     height: 700px;
 }
+
+/* THIS IS FOR ABOUT  */
+.font{
+    font-size: 400px;
+}
+
+.about-us-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.about-us{
+    padding-left: 30px;
+}
+.about-us h1{
+    font-size: 30px;
+}
+.about-us h3{
+    font-size: 25px;
+}
+

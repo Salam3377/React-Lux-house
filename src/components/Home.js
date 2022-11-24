@@ -27,7 +27,7 @@ const Home = (props) => {
 						<ul id='ul-menu-line-div'>
 							<li class="list-2"><a class='a' href="/">Home</a></li>
 							<li class="list-2"><a class='a' href="/menu">Menu</a></li>
-							<li class="list-2"><a class='a' href="/">About</a></li>
+							<li class="list-2"><a class='a' href="/about">About</a></li>
 							<li class="list-2"><a class='a' href="/">Contact Us</a></li>
 						</ul>
 				</div>
