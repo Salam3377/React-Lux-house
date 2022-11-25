@@ -1,10 +1,8 @@
-#menu-cart-img {
-    width: 100px;
-}
+
 #card {
     display: inline-block;
     width: 585px;
-    height: 150px;
+    height: 170px;
     position: relative;
     border: 1px solid rgb(162, 157, 157);
 }
@@ -26,6 +24,11 @@
 #menu-cart-img {
     position: absolute;
     right: 10px;
+    height: 120px;
+    object-fit: cover;
+    width: 130px;
+    top: 40px;
+    border-radius: 5%;
 }
 .price-p1 {
     position: absolute;
@@ -36,6 +39,7 @@
     position: absolute;
     left: 15px;
     top: 50px;
+    width: 415px;
 }
 #card-header {
     padding: 5px 10px;

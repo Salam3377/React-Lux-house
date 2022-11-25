@@ -47,14 +47,14 @@ const MenuPage = ({ msgAlert }) => {
             teaList.push(elem)
         }
     })
-    const menuTeaCards = teaList.map(menuItem => (
+    const menuTeaCards = teaList.map((menuItem, i) => (
             <Card id="card" key={ menuItem.id } style={{ margin: 10 }}>
                 <Card.Header id="card-header">{ menuItem.name }</Card.Header>
                 <Card.Body class="card-body">
                     <Card.Text class="card-text">
                         <p1 class="description-p1">{menuItem.description}</p1>
                         <p1 class="price-p1">{menuItem.price}</p1>
-                        <img id="menu-cart-img" src="https://t3.ftcdn.net/jpg/01/23/41/76/360_F_123417653_U1HQPWgXlch50hv1a9giz9KBzb4mrnwB.jpg" /> 
+                        <img id="menu-cart-img" src={ require(`../teaImages/img${i}.jpg`).default } /> 
                     </Card.Text>
                 </Card.Body>
             </Card>
