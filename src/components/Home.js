@@ -1,14 +1,113 @@
 import '../components/home.css'
 import logo from '../logo.png'; // with import
 import logoFooter from '../logo-for-footer.png';
-// import { Link } from 'react-router-dom'
+import messages from './shared/AutoDismissAlert/messages'
+import { signUp, signIn } from '../api/auth'
+import ProfileModal from './ProfileModal';
+import { useNavigate } from 'react-router-dom'
+import React, {useState, useEffect} from 'react'
 
 const Home = (props) => {
-	// const { msgAlert, user } = props
+	const [editModalShow, setEditModalShow] = useState(false)
+	const [updated, setUpdated] = useState(false)
+    const [isUpdateShown, setIsUpdateShown] = useState(false)
+    const triggerRefresh= () => {setUpdated(prev => !prev)}
+    const handleClose=() => {setEditModalShow(false)}
+
+	const navigate = useNavigate()
+
+	const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+	const [passwordConfirmation, setPasswordConfirmation] = useState('')
+
+	const handleUpdateSignIn = (event) => {
+        event.preventDefault()
+		console.log('the props', props)
+		const { msgAlert, setUser } = props
+        const credentials = {email, password}
+		signIn(credentials)
+			.then((res) => setUser(res.data.user))
+			.then(() => handleClose())
+			.then(() =>
+				msgAlert({
+					heading: 'Sign In Success',
+					message: messages.signInSuccess,
+					variant: 'success',
+				})
+			)
+            .then(() => navigate('/'))
+			.then(() => triggerRefresh())
+			.catch((error) => {
+                setEmail('')
+                setPassword('')
+				console.log(error, "error")
+				msgAlert({
+					heading: 'Sign In Failed with error: ' + error.message,
+					message: messages.signInFailure,
+					variant: 'danger',
+				})
+			})
+		}
+
+		const handleUpdateSignUp = (event) => {
+			event.preventDefault()
+			const { msgAlert, setUser } = props
+			const credentials = {email, password, passwordConfirmation}
+			signUp(credentials)
+				.then(() => signIn(credentials))
+				.then((res) => setUser(res.data.user))
+				.then(() => handleClose())
+				.then(() =>
+					msgAlert({
+						heading: 'Sign Up Success',
+						message: messages.signUpSuccess,
+						variant: 'success',
+					})
+				)
+				.then(() => navigate('/'))
+				.then(() => triggerRefresh())
+				.catch((error) => {
+					setEmail('')
+					setPassword('')
+					setPasswordConfirmation('')
+					msgAlert({
+						heading: 'Sign Up Failed with error: ' + error.message,
+						message: messages.signUpFailure,
+						variant: 'danger',
+					})
+				})
+			}
+
+
+
+		const handleChangeE = (event) => {
+			setEmail(event.target.value)
+		}
+		const handleChangeP = (event) => {
+			setPassword(event.target.value)
+		}
+		const handleChangePConfirm = (event) => {
+			setPasswordConfirmation(event.target.value)
+		}
+        
 	console.log('props in home', props)
 
 	return (
 		<>
+		{/* modal form open */}
+		{editModalShow &&<ProfileModal closeModal={setEditModalShow}
+                    show = {editModalShow}
+					handleUpdateSignIn={handleUpdateSignIn}
+					handleUpdateSignUp={handleUpdateSignUp}
+					handleChangeE={handleChangeE}
+					handleChangeP={handleChangeP}
+					handleChangePConfirm={handleChangePConfirm}
+					email={email}
+					password={password}
+					passwordConfirmation={passwordConfirmation}
+                    />}
+		
+		{/* ---------------- */}
 			<div id="body-div">
 				<div id='header-box'>
 					<div id="header-div">
@@ -19,17 +118,18 @@ const Home = (props) => {
 					<div id="right-menu-div">
 						<ul id='ul-right-menu-div'>
 							<li class="list"><a class='a' href="/">search</a></li>
-							<li class="list"><a class='a' href="/">profile</a></li>
+							<li class="list"><button onClick={()=> {setEditModalShow(true)}}>profile</button></li>
 							<li class="list"><a class='a' href="/cart">cart</a></li>
 						</ul>
 					</div>
 				</div>
+				
 				<div id="menu-line-div">
 						<ul id='ul-menu-line-div'>
-							<li class="list-2"><a class='a' href="/">Home</a></li>
-							<li class="list-2"><a class='a' href="/menu">Menu</a></li>
-							<li class="list-2"><a class='a' href="/about">About</a></li>
-							<li class="list-2"><a class='a' href="/">Contact Us</a></li>
+							<li class="list-2"><button class='a' onClick={() => navigate('/')}>Home</button></li>
+							<li class="list-2"><button class='a' onClick={() => navigate('/menu')}>Menu</button></li>
+							<li class="list-2"><button class='a' onClick={() => navigate('/about')}>About Us</button></li>
+							<li class="list-2"><button class='a' onClick={() => navigate('/contact')}>Contact</button></li>
 						</ul>
 				</div>
 				<div id="main-pic-div">

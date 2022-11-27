@@ -5,12 +5,14 @@ import logo from '../logo.png'
 import logoFooter from '../logo-for-footer.png';
 import '../components/home.css'
 import '../components/menuPage.css'
+import { useNavigate } from 'react-router-dom'
 
 
 import { cartCreate } from "../api/cart"
 
 
 const MenuPage = ({ msgAlert }) => {
+    const navigate = useNavigate()
     const [allMenu, setAllMenu] = useState([])
 
     useEffect(() => {
@@ -117,17 +119,16 @@ const MenuPage = ({ msgAlert }) => {
 					<div id="right-menu-div">
 						<ul id='ul-right-menu-div'>
 							<li class="list"><a class='a' href="/">search</a></li>
-							<li class="list"><a class='a' href="/">profile</a></li>
-							<li class="list"><a class='a' href="/cart">cart</a></li>
+							<li class="list"><button class='a' onClick={() => navigate('/cart')}>Cart</button></li>
 						</ul>
 					</div>
 				</div>
 				<div id="menu-line-div">
 						<ul id='ul-menu-line-div'>
-							<li class="list-2"><a class='a' href="/">Home</a></li>
-							<li class="list-2"><a class='a' href="/menu">Menu</a></li>
-							<li class="list-2"><a class='a' href="/about">About</a></li>
-							<li class="list-2"><a class='a' href="/">Contact Us</a></li>
+                            <li class="list-2"><button class='a' onClick={() => navigate('/')}>Home</button></li>
+							<li class="list-2"><button class='a' onClick={() => navigate('/menu')}>Menu</button></li>
+							<li class="list-2"><button class='a' onClick={() => navigate('/about')}>About Us</button></li>
+							<li class="list-2"><button class='a' onClick={() => navigate('/contact')}>Contact</button></li>
 						</ul>
 				</div>
                 <div id="menu-img-div">
