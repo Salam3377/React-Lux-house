@@ -16,6 +16,7 @@ import ChangePassword from './components/auth/ChangePassword'
 //importing menu page
 import MenuPage from './components/MenuPage'
 import About from './components/AboutPage'
+import CartPage from './components/CartPage'
 
 const App = () => {
 
@@ -82,6 +83,12 @@ const App = () => {
 		  	path='/about'
 			element={
 				<About msgAlert={msgAlert}/>
+			} 
+		  />
+		  <Route
+		  	path='/cart'
+			element={
+				<CartPage msgAlert={msgAlert}/>
 			} 
 		  />
 				</Routes>

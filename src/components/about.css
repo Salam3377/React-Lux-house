@@ -1,8 +1,9 @@
 #body-div {
     /* background-color: aqua; */
     width: 1250px;
-    height: 2000px;
+    height: 100%;
     margin: auto;
+    
 }
 #header-box {
     display: flex;

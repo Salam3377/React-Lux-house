@@ -1,7 +1,7 @@
 import '../components/home.css'
 import logo from '../logo.png'
 import picture from '../aboutUs.jpg'
-
+import logoFooter from '../logo-for-footer.png';
 const About = (props) => {
 	console.log('props in home', props)
 
@@ -18,7 +18,7 @@ const About = (props) => {
 						<ul id='ul-right-menu-div'>
 							<li class="list"><a class='a' href="/">search</a></li>
 							<li class="list"><a class='a' href="/">profile</a></li>
-							<li class="list"><a class='a' href="/">cart</a></li>
+							<li class="list"><a class='a' href="/cart">cart</a></li>
 						</ul>
 					</div>
 				</div>
@@ -26,7 +26,7 @@ const About = (props) => {
 						<ul id='ul-menu-line-div'>
 							<li class="list-2"><a class='a' href="/">Home</a></li>
 							<li class="list-2"><a class='a' href="/menu">Menu</a></li>
-							<li class="list-2"><a class='a' href="/">About</a></li>
+							<li class="list-2"><a class='a' href="/about">About</a></li>
 							<li class="list-2"><a class='a' href="/">Contact Us</a></li>
 						</ul>
 				</div>
@@ -37,15 +37,29 @@ const About = (props) => {
                     </div>
                     <div className="about-us">
                         <h1>Established in 2022</h1>
-                        <h3>A vision to create a company that brings together the best products from various cultures around the world and apply the finer details to make them even better. Details such as consistent product quality, exceptional customer service, and a nurturing environment were added to the equation that encompasses the culture of Lux. Our goal at Lux is simple, to be the change in everything that we do, from our culture of care to the quality of our products, and to how we can better serve our communities.</h3>
+                        <h3>A vision to create a company that brings together the best products from 
+							various cultures around the world and apply the finer details to make them even better.
+							Details such as consistent product quality, exceptional customer service,
+							and a nurturing environment were added to the equation that encompasses the culture of Lux.
+							Our goal at Lux is simple, to be the change in everything that we do, from our culture
+							of care to the quality of our products, and to how we can better serve our communities.
+						</h3>
                     </div>
-                </div>
-
-                
-				
-				<div>
-                
                 </div>							
+			</div>
+			<div id="footer-div">
+				<div id='footer-box'>
+					<div id='footer-logo-div'>
+						<img id='logo-footer-img' src={logoFooter} alt="logo" />
+					</div>
+					<div id='footer-center-div'>
+						<p id='footer-center-p'> &reg; 2022</p>
+					</div>
+					<div id='footer-right-div'>
+						<a href="#" class="fa fa-facebook"></a>
+						<a href="#" class="fa fa-instagram"></a>
+					</div>
+				</div>
 			</div>
 
 		</>

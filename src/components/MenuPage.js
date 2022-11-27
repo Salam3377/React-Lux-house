@@ -2,8 +2,13 @@ import React, { useEffect, useState } from "react"
 import { menuIndex } from "../api/menu"
 import { Card } from 'react-bootstrap'
 import logo from '../logo.png'
+import logoFooter from '../logo-for-footer.png';
 import '../components/home.css'
 import '../components/menuPage.css'
+
+
+import { cartCreate } from "../api/cart"
+
 
 const MenuPage = ({ msgAlert }) => {
     const [allMenu, setAllMenu] = useState([])
@@ -113,7 +118,7 @@ const MenuPage = ({ msgAlert }) => {
 						<ul id='ul-right-menu-div'>
 							<li class="list"><a class='a' href="/">search</a></li>
 							<li class="list"><a class='a' href="/">profile</a></li>
-							<li class="list"><a class='a' href="/">cart</a></li>
+							<li class="list"><a class='a' href="/cart">cart</a></li>
 						</ul>
 					</div>
 				</div>
@@ -151,6 +156,20 @@ const MenuPage = ({ msgAlert }) => {
                 </div>
                 
         </div>
+        <div id="footer-div">
+            <div id='footer-box'>
+                <div id='footer-logo-div'>
+                    <img id='logo-footer-img' src={logoFooter} alt="logo" />
+                </div>
+                <div id='footer-center-div'>
+                    <p id='footer-center-p'> &reg; 2022</p>
+                </div>
+                <div id='footer-right-div'>
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                </div>
+            </div>
+		</div>
         </>
     )
 }
