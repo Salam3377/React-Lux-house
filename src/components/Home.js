@@ -117,19 +117,19 @@ const Home = (props) => {
 					</div>
 					<div id="right-menu-div">
 						<ul id='ul-right-menu-div'>
-							<li class="list"><a class='a' href="/">search</a></li>
-							<li class="list"><button onClick={()=> {setEditModalShow(true)}}>profile</button></li>
-							<li class="list"><a class='a' href="/cart">cart</a></li>
+							<li class="list"><button class='list-buttons' onClick={()=> navigate('/search')}>Search</button></li>
+							<li class="list"><button class='list-buttons' onClick={()=> {setEditModalShow(true)}}>Profile</button></li>
+							<li class="list"><button class='list-buttons' onClick={()=> navigate('/cart')}>Cart</button></li>
 						</ul>
 					</div>
 				</div>
 				
 				<div id="menu-line-div">
 						<ul id='ul-menu-line-div'>
-							<li class="list-2"><button class='a' onClick={() => navigate('/')}>Home</button></li>
-							<li class="list-2"><button class='a' onClick={() => navigate('/menu')}>Menu</button></li>
-							<li class="list-2"><button class='a' onClick={() => navigate('/about')}>About Us</button></li>
-							<li class="list-2"><button class='a' onClick={() => navigate('/contact')}>Contact</button></li>
+							<li class="list-2"><button class='list-buttons' onClick={() => navigate('/')}>Home</button></li>
+							<li class="list-2"><button class='list-buttons' onClick={() => navigate('/menu')}>Menu</button></li>
+							<li class="list-2"><button class='list-buttons' onClick={() => navigate('/about')}>About Us</button></li>
+							<li class="list-2"><button class='list-buttons' onClick={() => navigate('/contact')}>Contact</button></li>
 						</ul>
 				</div>
 				<div id="main-pic-div">
