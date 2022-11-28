@@ -1,15 +1,21 @@
 #body-div {
-    /* background-color: aqua; */
     width: 1250px;
     height: 100%;
     margin: auto;
+    font-family: 'Cormorant Upright', serif;
+    
+}
+#menu-header-div {
+    width: 1250px;
+    margin: auto;
+    font-family: 'Cormorant Upright', serif;
 }
 #header-box {
+    margin-top: 50px;
     display: flex;
     position: relative;
 }
 #header-div {
-    /* background-color: yellow; */
     width: 350px;
     height: 250px;
     margin: auto;
@@ -24,47 +30,53 @@
     top: 75px;
 }
 #menu-line-div {
-    /* background-color: red; */
     width: 500px;
     height: 50px;
     margin: auto;
     margin-top: 20px;
 }
 #main-pic-div {
-    background-color: rgb(240, 127, 255);
     width: 1200px;
     height: 700px;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 30px;
     text-align: center;
 }
 #logo-img {
     width: 150px;
 }
+#lux-house-text {
+    font-weight: 900;
+    font-size: 50px;
+}
+#craft-coffee-text {
+    font-size: 35px;
+    font-weight: 500;
+}
 #ul-right-menu-div {
     list-style-type: none;
     display: flex;
-    margin-left: 70px;
+    margin-left: 50px;
     font-size: 20px;
 }
 .list {
-    padding-left: 10px;
-    padding-top: 10px;
+    padding: 0 5px 0 5px;
+    
 }
 #ul-menu-line-div {
     list-style-type: none;
     display: flex;
-    font-size: 25px;
+    font-size: 30px;
 }
 .list-2 {
-    padding-left: 20px;
-    padding-top: 5px;
+    padding: 5px 10px 0 10px;
 }
 .list-buttons {
     background-color: white;
     color: black;
     text-decoration: none;
     border: none;
+    font-weight: 900;
 }
 .list-buttons:hover {
     color: rgb(0, 60, 255);

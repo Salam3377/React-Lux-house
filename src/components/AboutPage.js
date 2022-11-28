@@ -13,8 +13,8 @@ const About = (props) => {
 			<div id='header-box'>
 					<div id="header-div">
 						<img id='logo-img' src={logo} alt="logo" />
-						<h1>Lux-House</h1>
-						<h3>Craft Coffee and more...</h3>
+						<h1 id='lux-house-text'>Lux-House</h1>
+						<h3 id='craft-coffee-text'>Craft Coffee and more...</h3>
 					</div>
 					<div id="right-menu-div">
 						<ul id='ul-right-menu-div'>
