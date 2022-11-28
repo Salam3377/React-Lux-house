@@ -16,6 +16,7 @@ import ChangePassword from './components/auth/ChangePassword'
 //importing menu page
 import MenuPage from './components/MenuPage'
 import About from './components/AboutPage'
+import CartPage from './components/CartPage'
 
 const App = () => {
 
@@ -46,9 +47,9 @@ const App = () => {
 
 		return (
 			<Fragment>
-				<Header user={user} />
+				{/* <Header user={user} /> */}
 				<Routes>
-					<Route path='/' element={<Home msgAlert={msgAlert} user={user} />} />
+					<Route path='/' element={<Home msgAlert={msgAlert} user={user} setUser={setUser} />} />
 					<Route
 						path='/sign-up'
 						element={<SignUp msgAlert={msgAlert} setUser={setUser} />}
@@ -82,6 +83,12 @@ const App = () => {
 		  	path='/about'
 			element={
 				<About msgAlert={msgAlert}/>
+			} 
+		  />
+		  <Route
+		  	path='/cart'
+			element={
+				<CartPage msgAlert={msgAlert}/>
 			} 
 		  />
 				</Routes>
