@@ -23,8 +23,8 @@ const [modalShowSignUp, setModalShowSignUp] = useState(false)
     return (
         <Container  className="justify-content-center">
             <Modal id='profile-modal-container' show={show} onHide={closeModal}>
-            <Modal.Header id='modal-header' closeButton/>
-            <h3> Profile</h3>
+            <Modal.Header id='modal-header' closeButton />
+            <h3 class="modal-header"> Profile</h3>
            
             {modalShowSignIn &&<SignInModal closeModal={setModalShowSignIn}
                         show = {modalShowSignIn}
@@ -45,10 +45,13 @@ const [modalShowSignUp, setModalShowSignUp] = useState(false)
                         passwordConfirmation={passwordConfirmation}
                     />}
             <Modal.Body>
+                <div id='modal-div'>
+                    <p>Welcome</p>
+                </div>
                 <Form >
-                <Button onClick={() => {setModalShowSignUp(true)}} >Sign-Up</Button>
-                <Button onClick={() => {setModalShowSignIn(true)}} >Sign-In</Button>
-                <Button onClick={() => navigate('sign-out')} variant="danger" >Sign-Out</Button>
+                <Button id="button" onClick={() => {setModalShowSignUp(true)}}  variant="btn btn-outline-info btn-sm" >Sign-Up</Button>
+                <Button id="button" onClick={() => {setModalShowSignIn(true)}}  variant="btn btn-outline-info btn-sm" >Sign-In</Button>
+                <Button id="button" onClick={() => navigate('sign-out')} variant="btn btn-outline-danger btn-sm" >Sign-Out</Button>
                 </Form>
             </Modal.Body>
             </Modal>

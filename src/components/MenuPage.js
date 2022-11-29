@@ -164,12 +164,14 @@ const MenuPage = ({ msgAlert }) => {
                 <div id="menu-card">
                     {menuLunchCards}
                 </div>
+                <p id="sides"><span id="sides-span">Sides:</span> Roasted potatoes, mashed potatoes, rice, french fries, 
+                garden salad, asparagus, roasted vegetables!</p>
                 <h3 class="menu-category">Beverage</h3>
-                <h4>Coffee</h4>
+                <h4 class="tea-coffee">Coffee</h4>
                 <div id="menu-card">
                     { menuCoffeeCards }
                 </div>
-                <h4 >Tea</h4>
+                <h4 class="tea-coffee">Tea</h4>
                 <div id="menu-card">
                     { menuTeaCards }
                 </div>
