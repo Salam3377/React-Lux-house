@@ -69,15 +69,17 @@ const Contact = (props) => {
 					</ul>
 		</div>
         </div>
-        <div className="apply-container">
-            <div className="apply">
-                <h2>Contact Us</h2>
-                <p>We love coffee. Reach out and let us know about your experience at Lux-house. 
+		<div id = "top0">
+			<div id = "top1">
+        	
+                	<h2 id ='title'>Contact Us</h2>
+                	<p id = 'text'>We love coffee. Reach out and let us know about your experience at Lux-house. 
                 If you are seeking to be part of our team,
                 please fill out your information below with your resume. </p>
-            </div>
-        </div>
-        <div className="information">
+			</div>
+        	
+		</div>
+        <div id = "top2">
 			<form onSubmit={sendEmail}>
             	<label> Your Name</label>
                 	<input type = "text" name = "name" placeholder="your name..." ></input>
@@ -89,7 +91,7 @@ const Contact = (props) => {
                 	</textarea>
             	<input  className="button" type="submit" value="Submit"></input>
 			</form>
-        </div>
+		</div>
         <div id="footer-div">
 				<div id='footer-box'>
 					<div id='footer-logo-div'>
