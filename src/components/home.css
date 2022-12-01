@@ -161,3 +161,32 @@
     color: rgb(255, 255, 255);
     font-size: 20px;
   }
+
+
+#top1 {
+    text-align: center;
+}
+#top0 {
+    margin:auto;
+}
+#top2 {
+    
+    margin: auto;
+    margin-top: 0;
+    width: 500px;
+    height: 500px;
+    margin-bottom: 500px;
+}
+/* form */
+form {
+    display: grid;
+
+}
+
+label {
+    float: left;
+    padding-right: 24px;
+}
+
+
+
