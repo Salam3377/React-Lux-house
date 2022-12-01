@@ -18,7 +18,17 @@ const [modalShowSignUp, setModalShowSignUp] = useState(false)
     const { user, handleChangeE,handleChangeP,handleChangePConfirm,handleUpdateSignIn,handleUpdateSignUp,closeModal,
     show,email,password,passwordConfirmation} = props
 
-    
+    const logged = (
+        <>
+            <Button id="button" onClick={() => navigate('sign-out')} variant="btn btn-outline-danger btn-sm" >Sign-Out</Button>
+        </>
+    )
+    const loggedOut = (
+        <>
+            <Button id="button" onClick={() => {setModalShowSignUp(true)}}  variant="btn btn-outline-info btn-sm" >Sign-Up</Button>
+            <Button id="button" onClick={() => {setModalShowSignIn(true)}}  variant="btn btn-outline-info btn-sm" >Sign-In</Button>
+        </>
+    )
     
     return (
         <Container  className="justify-content-center">
@@ -46,9 +56,13 @@ const [modalShowSignUp, setModalShowSignUp] = useState(false)
                     />}
             <Modal.Body>
                 <div id='modal-div'>
-                    <p>Welcome</p>
+                    <h3 class='modal-welcome'>Welcome</h3>
+                    <p class='modal-text'>Sign in to get discounts and more...</p>
+                    <p class='modal-text'>Don't have an account?</p>
+                    <p class='modal-text'>Create in seconds using just email</p>
                 </div>
                 <Form >
+                    {/* {user? logged : loggedOut} */}
                 <Button id="button" onClick={() => {setModalShowSignUp(true)}}  variant="btn btn-outline-info btn-sm" >Sign-Up</Button>
                 <Button id="button" onClick={() => {setModalShowSignIn(true)}}  variant="btn btn-outline-info btn-sm" >Sign-In</Button>
                 <Button id="button" onClick={() => navigate('sign-out')} variant="btn btn-outline-danger btn-sm" >Sign-Out</Button>

@@ -1,45 +1,30 @@
-#body-div {
-    /* background-color: aqua; */
-    width: 1250px;
-    height: 100%;
-    margin: auto;
-    
+.font{
+    font-size: 400px;
 }
-#header-box {
+
+.about-us-container {
     display: flex;
-    position: relative;
+    flex-direction: row;
+    margin-bottom: 450px;
+    margin-top: 30px;
+    padding: 20px;
+    /* border: solid black;
+    border-top: none; */
+    border-top: solid black 1px;
 }
-#header-div {
-    /* background-color: yellow; */
-    width: 350px;
-    height: 250px;
-    margin: auto;
-    text-align: center;
+
+.about-us{
+    padding-left: 30px;
 }
-#right-menu-div {
-   background-color: white;
-   width: 300px;
-   height: 50px;
-   position: absolute;
-    right: 10px;
-    top: 75px;
+.about-us h1{
+    font-size: 50px;
+    font-weight: 900;
+    text-decoration: solid;
+
 }
-#menu-line-div {
-    /* background-color: red; */
-    width: 500px;
-    height: 50px;
-    margin: auto;
-    margin-top: 20px;
-}
-#main-pic-div {
-    background-color: rgb(240, 127, 255);
-    width: 1200px;
-    height: 500px;
-    margin: auto;
-    margin-top: 20px;
-    text-align: center;
-}
-#about-us{
-    border: 1px solid red;
-    font-size: 40px;
+.about-us h3{
+    font-size: 35px;
+    color: rgb(105, 16, 146);
+    font-weight: bold;
+    
 }

@@ -1,4 +1,4 @@
-import '../components/home.css'
+import '../components/about.css'
 import { useNavigate } from 'react-router-dom'
 import logo from '../logo.png'
 import picture from '../aboutUs.jpg'
