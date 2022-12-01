@@ -4,7 +4,7 @@ import logo from '../logo.png'
 import picture from '../aboutUs.jpg'
 import logoFooter from '../logo-for-footer.png';
 const About = (props) => {
-	console.log('props in home', props)
+	console.log('props in about', props)
 	const navigate = useNavigate()
 
 	return (
