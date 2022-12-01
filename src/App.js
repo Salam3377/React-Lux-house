@@ -19,6 +19,8 @@ import About from './components/AboutPage'
 import CartPage from './components/CartPage'
 import Contact from './components/Contact'
 
+import SearchBar from './components/SearchPage'
+
 const App = () => {
 
   const [user, setUser] = useState(null)
@@ -96,6 +98,12 @@ const App = () => {
 		  	path='/cart'
 			element={
 				<CartPage msgAlert={msgAlert}/>
+			} 
+		  />
+		  <Route
+		  	path='/search'
+			element={
+				<SearchBar msgAlert={msgAlert}/>
 			} 
 		  />
 				</Routes>

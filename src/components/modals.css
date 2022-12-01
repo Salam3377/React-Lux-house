@@ -1,3 +1,9 @@
 #profile-modal-container {
     width: 480px;
 }
+* {
+    font-family: 'Cormorant Upright', serif;
+}
+#button {
+    font-size: 18px;
+}

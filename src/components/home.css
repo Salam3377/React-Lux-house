@@ -102,43 +102,12 @@
 }
 
 
-/* THIS IS FOR ABOUT  */
-.font{
-    font-size: 400px;
-}
-
-.about-us-container {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 450px;
-}
-
-.about-us{
-    padding-left: 30px;
-}
-.about-us h1{
-    font-size: 30px;
-}
-.about-us h3{
-    font-size: 25px;
-}
-/* THIS IS FOR CONTACT */
-.apply {
-    text-align: center;
-    width: 400px;
-    margin: auto;
-}
-.information {
-    display: grid;
-}
-
-
 
 /* down here footer for all pages to copy paste */
 /* body height need to be set to 100% */
 #footer-div {
     text-align: center;
-    margin-top: 0px;
+    margin-top: 30px;
     left: 0;
     bottom: 0;
     width: 100%;
