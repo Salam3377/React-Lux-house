@@ -85,7 +85,7 @@ const MenuPage = ({ msgAlert }) => {
                 <Card.Header id="card-header">{ menuItem.name }</Card.Header>
                 <Card.Body class="card-body">
                     <Card.Text class="card-text">
-                    <a className = "add" href= "/cart/" class = "btn btn-info">
+                    <a class = "btn btn-info">
                         Add To Cart 
                     </a>
                         <p1 class="description-p1">{menuItem.description}</p1>
