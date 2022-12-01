@@ -80,7 +80,7 @@ const MenuPage = ({ msgAlert }) => {
             dessertList.push(elem)
         }
     })
-    const menuDessertCards = dessertList.map(menuItem => (
+    const menuDessertCards = dessertList.map((menuItem,i) => (
             <Card id="card" key={ menuItem.id } style={{ margin: 10 }}>
                 <Card.Header id="card-header">{ menuItem.name }</Card.Header>
                 <Card.Body class="card-body">
@@ -90,7 +90,7 @@ const MenuPage = ({ msgAlert }) => {
                     </a>
                         <p1 class="description-p1">{menuItem.description}</p1>
                         <p1 class="price-p1">{menuItem.price}</p1>
-                        <img id="menu-cart-img" src="https://t3.ftcdn.net/jpg/01/23/41/76/360_F_123417653_U1HQPWgXlch50hv1a9giz9KBzb4mrnwB.jpg" /> 
+                        <img id="menu-cart-img" src={ require(`../dessertImages/img${i}.jpg`).default } /> 
                     </Card.Text>
                 </Card.Body>
             </Card>
@@ -103,7 +103,7 @@ const MenuPage = ({ msgAlert }) => {
             lunchList.push(elem)
         }
     })
-    const menuLunchCards = lunchList.map(menuItem => (
+    const menuLunchCards = lunchList.map((menuItem,i) => (
             <Card id="card" key={ menuItem.id } style={{ margin: 10 }}>
                 <Card.Header id="card-header">{ menuItem.name }</Card.Header>
                 <Card.Body class="card-body">
@@ -113,7 +113,7 @@ const MenuPage = ({ msgAlert }) => {
                     </a>
                         <p1 class="description-p1">{menuItem.description}</p1>
                         <p1 class="price-p1">{menuItem.price}</p1>
-                        <img id="menu-cart-img" src="https://t3.ftcdn.net/jpg/01/23/41/76/360_F_123417653_U1HQPWgXlch50hv1a9giz9KBzb4mrnwB.jpg" /> 
+                        <img id="menu-cart-img" src={ require(`../lunchImages/img${i}.jpg`).default } /> 
                     </Card.Text>
                 </Card.Body>
             </Card>
@@ -180,12 +180,14 @@ const MenuPage = ({ msgAlert }) => {
                 <div id="menu-card">
                     {menuLunchCards}
                 </div>
+                <p id="sides"><span id="sides-span">Sides:</span> Roasted potatoes, mashed potatoes, rice, french fries, 
+                garden salad, asparagus, roasted vegetables!</p>
                 <h3 class="menu-category">Beverage</h3>
-                <h4>Coffee</h4>
+                <h4 class="tea-coffee">Coffee</h4>
                 <div id="menu-card">
                     { menuCoffeeCards }
                 </div>
-                <h4 >Tea</h4>
+                <h4 class="tea-coffee">Tea</h4>
                 <div id="menu-card">
                     { menuTeaCards }
                 </div>

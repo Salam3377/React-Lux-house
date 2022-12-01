@@ -1,0 +1,30 @@
+.font{
+    font-size: 400px;
+}
+
+.about-us-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 450px;
+    margin-top: 30px;
+    padding: 20px;
+    /* border: solid black;
+    border-top: none; */
+    border-top: solid black 1px;
+}
+
+.about-us{
+    padding-left: 30px;
+}
+.about-us h1{
+    font-size: 50px;
+    font-weight: 900;
+    text-decoration: solid;
+
+}
+.about-us h3{
+    font-size: 35px;
+    color: rgb(105, 16, 146);
+    font-weight: bold;
+    
+}

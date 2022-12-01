@@ -13,7 +13,7 @@ const SignInModal = (props) => {
         <Container className="justify-content-center">
             <Modal show={show} onHide={closeModal}>
             <Modal.Header id='modal-header' closeButton/>
-            <h3> Sign-In</h3>
+            <h3 class="modal-header"> Sign-In</h3>
             <Modal.Body>
                 <Form onSubmit={handleUpdateSignIn}>
                     <Form.Group controlId='email'>
