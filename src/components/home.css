@@ -122,6 +122,16 @@
 .about-us h3{
     font-size: 25px;
 }
+/* THIS IS FOR CONTACT */
+.apply {
+    text-align: center;
+    width: 400px;
+    margin: auto;
+}
+.information {
+    display: grid;
+}
+
 
 
 /* down here footer for all pages to copy paste */
