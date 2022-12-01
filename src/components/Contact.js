@@ -79,7 +79,7 @@ const Contact = (props) => {
         </div>
         <div className="information">
 			<form onSubmit={sendEmail}>
-            	<label> Your  Name</label>
+            	<label> Your Name</label>
                 	<input type = "text" name = "name" placeholder="your name..." ></input>
             	<label> Email</label>
                 	<input type = "text" name = "Email" placeholder="your name..." ></input>
