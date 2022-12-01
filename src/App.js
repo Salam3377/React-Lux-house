@@ -17,6 +17,7 @@ import ChangePassword from './components/auth/ChangePassword'
 import MenuPage from './components/MenuPage'
 import About from './components/AboutPage'
 import CartPage from './components/CartPage'
+import Contact from './components/Contact'
 
 import SearchBar from './components/SearchPage'
 
@@ -85,6 +86,12 @@ const App = () => {
 		  	path='/about'
 			element={
 				<About msgAlert={msgAlert}/>
+			} 
+		  />
+		  <Route
+		  	path='/contact'
+			element={
+				<Contact msgAlert={msgAlert}/>
 			} 
 		  />
 		  <Route
