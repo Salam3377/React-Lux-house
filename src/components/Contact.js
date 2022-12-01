@@ -1,4 +1,5 @@
 
+import emailjs from '@emailjs/browser';
 import "../components/home.css"
 import { Col, Row } from "react-bootstrap"
 import { useNavigate } from 'react-router-dom'
@@ -19,23 +20,35 @@ const Contact = (props) => {
 	// 2. it will execute any functions and render the page
 	// 3. useEffect only happens after first render
 
-	const sendContact = () => {
-		// if processing data needed, do like this
-		sendContactData(name, email, message);
-	};
+	// const sendContact = () => {
+	// 	// if processing data needed, do like this
+	// 	sendContactData(name, email, message);
+	// };
 
-	const handleNameOnChange = (event) => {
-		setName(event.target.value);
-	};
+	// const handleNameOnChange = (event) => {
+	// 	setName(event.target.value);
+	// };
 
-	const handleEmailOnChange = (event) => {
-		setEmail(event.target.value)
-	};
+	// const handleEmailOnChange = (event) => {
+	// 	setEmail(event.target.value)
+	// };
 
-	const handleMessageOnChange = (event) => {
-		setMessage(event.target.value)
+	// const handleMessageOnChange = (event) => {
+	// 	setMessage(event.target.value)
 
-	}
+	// }
+	const sendEmail = (e) => {
+		e.preventDefault();
+	
+		emailjs.sendForm('service_2mi089m', 'lux_house', e.target, 'k6aLEovzlG8qq7Ru6')
+		  .then((result) => {
+			  console.log(result.text);
+		  }, (error) => {
+			  console.log(error.text);
+		  });
+		  e.target.reset()
+	  };
+
 
 	return (
     <>
@@ -65,15 +78,17 @@ const Contact = (props) => {
             </div>
         </div>
         <div className="information">
-            <label> Your  Name</label>
-                <input type = "text" name = "firstname" placeholder="your name..." onChange={handleNameOnChange}></input>
-            <label> Email</label>
-                <input type = "text" name = "email" placeholder="your name..." onChange= {handleEmailOnChange}></input>
-            <label>Message</label>
-                <textarea name="message" placeholder="message..."onChange= {handleEmailOnChange}>
+			<form onSubmit={sendEmail}>
+            	<label> Your  Name</label>
+                	<input type = "text" name = "name" placeholder="your name..." ></input>
+            	<label> Email</label>
+                	<input type = "text" name = "Email" placeholder="your name..." ></input>
+            	<label>Message</label>
+                	<textarea name="message" placeholder="message...">
 
-                </textarea>
-            <input onClick={sendContact} className="button" type="submit" value="Submit"></input>
+                	</textarea>
+            	<input  className="button" type="submit" value="Submit"></input>
+			</form>
         </div>
         <div id="footer-div">
 				<div id='footer-box'>
