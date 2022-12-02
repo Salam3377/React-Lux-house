@@ -15,7 +15,7 @@ export const cartIndex = () => {
 export const addCartIndex = (id) => {
     return axios({
         method: "POST",
-        url: apiUrl + '/cart/' + id,
+        url: apiUrl + '/cart/' + id + '/',
         // headers: {
         //     Authorization: `Token ${user.token}`
         //}

@@ -75,7 +75,7 @@ const MenuPage = ({ msgAlert }) => {
                 <Card.Header id="card-header">{ menuItem.name }</Card.Header>
                 <Card.Body class="card-body">
                     <Card.Text class="card-text">
-                    <a class = "btn btn-info">
+                    <a onClick={() => addCartClick(menuItem.id)} class = "btn btn-info">
                         Add To Cart 
                     </a>
                         <p1 class="description-p1">{menuItem.description}</p1>
@@ -98,7 +98,7 @@ const MenuPage = ({ msgAlert }) => {
                 <Card.Header id="card-header">{ menuItem.name }</Card.Header>
                 <Card.Body class="card-body">
                     <Card.Text class="card-text">
-                    <button class = "btn btn-info">
+                    <button onClick={() => addCartClick(menuItem.id)} class = "btn btn-info">
                         Add To Cart 
                     </button>
                         <p1 class="description-p1">{menuItem.description}</p1>
@@ -121,7 +121,7 @@ const MenuPage = ({ msgAlert }) => {
                 <Card.Header id="card-header">{ menuItem.name }</Card.Header>
                 <Card.Body class="card-body">
                     <Card.Text class="card-text">
-                    <a class = "btn btn-info">
+                    <a onClick={() => addCartClick(menuItem.id)} class = "btn btn-info">
                         Add To Cart 
                     </a>
                         <p1 class="description-p1">{menuItem.description}</p1>
@@ -144,7 +144,7 @@ const MenuPage = ({ msgAlert }) => {
                 <Card.Header id="card-header">{ menuItem.name }</Card.Header>
                 <Card.Body class="card-body">
                     <Card.Text class="card-text">
-                    <a class = "btn btn-info">
+                    <a onClick={() => addCartClick(menuItem.id)} class = "btn btn-info">
                         Add To Cart 
                     </a>
                         <p1 class="description-p1">{menuItem.description}</p1>
