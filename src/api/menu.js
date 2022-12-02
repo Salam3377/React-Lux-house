@@ -5,7 +5,7 @@ import axios from 'axios'
 export const menuIndex = () => {
     return axios({
         method: "GET",
-        url: apiUrl + '/menu/',
+        url: apiUrl + '/product/',
         // headers: {
         //     Authorization: `Token ${user.token}`
         //}
