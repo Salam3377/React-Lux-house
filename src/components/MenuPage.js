@@ -140,9 +140,9 @@ const MenuPage = ({ msgAlert }) => {
                 <Card.Header id="card-header">{ menuItem.name }</Card.Header>
                 <Card.Body class="card-body">
                     <Card.Text class="card-text">
-                    {/* <a class = "btn btn-info">
+                    <a class = "btn btn-info">
                         Add To Cart 
-                    </a> */}
+                    </a>
                         <p1 class="description-p1">{menuItem.description}</p1>
                         <p1 class="price-p1">{menuItem.price}</p1>
                         <img id="menu-cart-img" src={ require(`../lunchImages/img${i}.jpg`).default } /> 
