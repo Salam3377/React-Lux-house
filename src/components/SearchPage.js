@@ -2,11 +2,15 @@ import React, {useState} from 'react'
 
 
 const SearchBar = () => {
+    const [search, setSearch] = useState('')
 
 
 return (
     <>
-    <h1>search page</h1>
+    <form>
+        <label hmtlFor="search"> Search</label>
+        <input type = " text " id = " search " name = "search" onChange ={e => setSearch(e.target.value)} />
+    </form>
     </>
 )
 

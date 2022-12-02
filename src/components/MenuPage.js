@@ -11,6 +11,8 @@ import { useNavigate } from 'react-router-dom'
 const MenuPage = ({ msgAlert }) => {
     const navigate = useNavigate()
     const [allMenu, setAllMenu] = useState([])
+    const [search, setSearch] = useState("")
+    const [filteredMenu, setFilteredMenu]= useState([])
 
     useEffect(() => {
         menuIndex()
@@ -25,6 +27,38 @@ const MenuPage = ({ msgAlert }) => {
             })
         })
     }, [])
+
+
+    // Search input
+    const handleSearchChange = (e) => {
+        const input = e.target.value.toLowerCase()
+        // const filterMenu = allMenu.filter(menuItem => {
+        //     return menuItem.name.toLowerCase().includes(search.toLowerCase())
+        // })
+        const filteredItems = []
+        let index = 0
+        let currMenuType = ''
+        allMenu.forEach(item => {
+            if (item.menu_type !== currMenuType) {
+                index = 0
+                currMenuType = item.menu_type
+            }
+            
+            if (item.name.toLowerCase().indexOf(input) >= 0) {
+                filteredItems.push(
+                    {
+                        itemIndex: index,
+                        ...item
+                    }
+                )
+            }
+            index = index + 1
+        })
+        console.log(filteredItems)
+        setFilteredMenu(filteredItems)
+        setSearch(input)
+    }
+
     //Coffee  map function down here
     let coffeeList = []
     const coffeeFilter = allMenu.filter(elem => {
@@ -54,6 +88,7 @@ const MenuPage = ({ msgAlert }) => {
             teaList.push(elem)
         }
     })
+
     const menuTeaCards = teaList.map((menuItem, i) => (
             <Card id="card" key={ menuItem.id } style={{ margin: 10 }}>
                 <Card.Header id="card-header">{ menuItem.name }</Card.Header>
@@ -139,6 +174,79 @@ const MenuPage = ({ msgAlert }) => {
             </Card>
         ))
     
+    // const getFilePath = (type) => {
+    //     switch (type) {
+    //         case 'coffee':
+    //             return 'coffeeImages'
+    //         case 'tea':
+    //             return 'teaImages'
+    //         case 'lunch':
+    //             return 'lunchImages'
+    //         case 'breakfast':
+    //             return 'breakfastImages'
+    //         case 'dessert':
+    //             return 'dessertImages'
+    //         default:
+    //             return 'dessertImages'
+    //     }
+    // }
+
+    const getFilteredMenuItem = () => {
+        return filteredMenu.map((menuItem) => {
+            // const a = getFilePath(menuItem.menu_type, menuItem.itemIndex)
+            return (
+                <Card id="card" key={ menuItem.id } style={{ margin: 10 }}>
+                    <Card.Header id="card-header">{ menuItem.name }</Card.Header>
+                    <Card.Body class="card-body">
+                        <Card.Text class="card-text">
+                            <p1 class="description-p1">{menuItem.description}</p1>
+                            <p1 class="price-p1">{menuItem.price}</p1>
+                            <img id="menu-cart-img" src={ require(`../${menuItem.menu_type}Images/img${menuItem.itemIndex}.jpg`).default } /> 
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+            )
+        })
+    }
+    
+    const renderMenuOrSearchResult = () => {
+        if (search.length > 0) {
+            return (
+                <>
+                    {getFilteredMenuItem()}
+                </>
+            )
+        } else {
+            return (
+                <>
+                    <h3 class="menu-category">BreakFast</h3>
+                    <div id="menu-card">
+                        {menuBreakfastCards}
+                    </div>
+                    <h3 class="menu-category">Lunch</h3>
+                    <div id="menu-card">
+                        {menuLunchCards}
+                    </div>
+                    <p id="sides"><span id="sides-span">Sides:</span> Roasted potatoes, mashed potatoes, rice, french fries, 
+                    garden salad, asparagus, roasted vegetables!</p>
+                    <h3 class="menu-category">Beverage</h3>
+                    <h4 class="tea-coffee">Coffee</h4>
+                    <div id="menu-card">
+                        { menuCoffeeCards }
+                    </div>
+                    <h4 class="tea-coffee">Tea</h4>
+                    <div id="menu-card">
+                        { menuTeaCards }
+                    </div>
+                    <h3 class="menu-category">Desserts</h3>
+                    <div id="menu-card">
+                        {menuDessertCards}
+                    </div>
+                </>
+            );
+        }
+    }
+    
     return(
         <>
         <div id="menu-header-div">
@@ -150,7 +258,7 @@ const MenuPage = ({ msgAlert }) => {
 					</div>
 					<div id="right-menu-div">
 						<ul id='ul-right-menu-div'>
-                            <li class="list"><button class='list-buttons' onClick={()=> navigate('/search')}>Search</button></li>
+                            {/* <li class="list"><button class='list-buttons' onClick={()=> navigate('/search')}>Search</button></li> */}
 							<li class="list"><button class='list-buttons'  onClick={() => navigate('/cart')}>Cart</button></li>
 						</ul>
 					</div>
@@ -168,31 +276,11 @@ const MenuPage = ({ msgAlert }) => {
                     <img id="menu-img" src="https://thepointsguy.global.ssl.fastly.net/uk/originals/2021/09/20210930_Mondrian-Shoreditch-Hotel-London-Accor_BSmithson-86.jpg" />
                 </div>
         <div id="body-div">
-                <h3 class="menu-category">BreakFast</h3>
-                <div id="menu-card">
-                    {menuBreakfastCards}
-                    
-                </div>
-                <h3 class="menu-category">Lunch</h3>
-                <div id="menu-card">
-                    {menuLunchCards}
-                </div>
-                <p id="sides"><span id="sides-span">Sides:</span> Roasted potatoes, mashed potatoes, rice, french fries, 
-                garden salad, asparagus, roasted vegetables!</p>
-                <h3 class="menu-category">Beverage</h3>
-                <h4 class="tea-coffee">Coffee</h4>
-                <div id="menu-card">
-                    { menuCoffeeCards }
-                </div>
-                <h4 class="tea-coffee">Tea</h4>
-                <div id="menu-card">
-                    { menuTeaCards }
-                </div>
-                <h3 class="menu-category">Desserts</h3>
-                <div id="menu-card">
-                    {menuDessertCards}
-                </div>
-                
+                <form class = "search-bar">
+                    <label hmtlFor="search" > Search</label>
+                    <input placeholder="Search..." type = " text " id = " search " name = "search" onChange ={handleSearchChange} />
+                </form>
+                {renderMenuOrSearchResult()}
         </div>
         <div id="footer-div">
             <div id='footer-box'>
