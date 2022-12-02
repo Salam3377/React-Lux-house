@@ -163,14 +163,16 @@
   }
 
 
+/* contact page  */
+
 #top1 {
     text-align: center;
 }
 #top0 {
     margin:auto;
+    margin-top: 100px;
 }
 #top2 {
-    
     margin: auto;
     margin-top: 0;
     width: 500px;
@@ -178,7 +180,7 @@
     margin-bottom: 500px;
 }
 /* form */
-form {
+#contact-form {
     display: grid;
 
 }
@@ -188,5 +190,30 @@ label {
     padding-right: 24px;
 }
 
-
-
+#title {
+    font-size: 50px;
+}
+#text {
+    font-size: 25px;
+    height: 130px;
+    width: 700px;
+    margin: auto;
+}
+#contact-form {
+    font-size: 20px;
+}
+.contact-label {
+    font-size: 25px;
+}
+textarea {
+    height: 200px;
+    border: solid black 1px;
+    background-color: rgb(243, 241, 236);
+}
+.text-input {
+    background-color: rgb(243, 241, 236);
+}
+#contact-submit {
+    
+    
+}

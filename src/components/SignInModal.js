@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { Form, Button, Container, Modal } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
+import '../components/modals.css'
 
 
 
@@ -11,7 +12,7 @@ const SignInModal = (props) => {
     
     return (
         <Container className="justify-content-center">
-            <Modal show={show} onHide={closeModal}>
+            <Modal id='sign-in-modal' show={show} onHide={closeModal}>
             <Modal.Header id='modal-header' closeButton/>
             <h3 class="modal-header"> Sign-In</h3>
             <Modal.Body>
@@ -38,7 +39,7 @@ const SignInModal = (props) => {
                             onChange={handleChangeP}
                         />
                     </Form.Group>
-                    <Button variant='primary' type='submit'>
+                    <Button id='sign-in-button' variant='primary' type='submit'>
                         Submit
                     </Button>
                 </Form>

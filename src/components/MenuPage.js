@@ -8,9 +8,6 @@ import '../components/menuPage.css'
 import { useNavigate } from 'react-router-dom'
 
 
-import { cartCreate } from "../api/cart"
-
-
 const MenuPage = ({ msgAlert }) => {
     const navigate = useNavigate()
     const [allMenu, setAllMenu] = useState([])
@@ -18,7 +15,7 @@ const MenuPage = ({ msgAlert }) => {
     useEffect(() => {
         menuIndex()
         .then(res => {
-            setAllMenu(res.data.menu)
+            setAllMenu(res.data.product)
         })
         .catch((error) => {
             msgAlert({
@@ -40,9 +37,9 @@ const MenuPage = ({ msgAlert }) => {
                 <Card.Header id="card-header">{ menuItem.name }</Card.Header>
                 <Card.Body class="card-body">
                     <Card.Text class="card-text">
-                    <a class = "btn btn-info">
+                    {/* <a class = "btn btn-info">
                         Add To Cart 
-                    </a>
+                    </a> */}
                         <p1 class="description-p1">{menuItem.description}</p1>
                         <p1 class="price-p1">{menuItem.price}</p1>
                         <img id="menu-cart-img" src={ require(`../coffeeImages/img${i}.jpg`).default } /> 
@@ -62,9 +59,9 @@ const MenuPage = ({ msgAlert }) => {
                 <Card.Header id="card-header">{ menuItem.name }</Card.Header>
                 <Card.Body class="card-body">
                     <Card.Text class="card-text">
-                    <a class = "btn btn-info">
+                    {/* <a class = "btn btn-info">
                         Add To Cart 
-                    </a>
+                    </a> */}
                         <p1 class="description-p1">{menuItem.description}</p1>
                         <p1 class="price-p1">{menuItem.price}</p1>
                         <img id="menu-cart-img" src={ require(`../teaImages/img${i}.jpg`).default } /> 
@@ -85,9 +82,9 @@ const MenuPage = ({ msgAlert }) => {
                 <Card.Header id="card-header">{ menuItem.name }</Card.Header>
                 <Card.Body class="card-body">
                     <Card.Text class="card-text">
-                    <a class = "btn btn-info">
+                    {/* <a class = "btn btn-info">
                         Add To Cart 
-                    </a>
+                    </a> */}
                         <p1 class="description-p1">{menuItem.description}</p1>
                         <p1 class="price-p1">{menuItem.price}</p1>
                         <img id="menu-cart-img" src={ require(`../dessertImages/img${i}.jpg`).default } /> 
@@ -108,9 +105,9 @@ const MenuPage = ({ msgAlert }) => {
                 <Card.Header id="card-header">{ menuItem.name }</Card.Header>
                 <Card.Body class="card-body">
                     <Card.Text class="card-text">
-                    <a class = "btn btn-info">
+                    {/* <a class = "btn btn-info">
                         Add To Cart 
-                    </a>
+                    </a> */}
                         <p1 class="description-p1">{menuItem.description}</p1>
                         <p1 class="price-p1">{menuItem.price}</p1>
                         <img id="menu-cart-img" src={ require(`../lunchImages/img${i}.jpg`).default } /> 
@@ -131,9 +128,9 @@ const MenuPage = ({ msgAlert }) => {
                 <Card.Header id="card-header">{ menuItem.name }</Card.Header>
                 <Card.Body class="card-body">
                     <Card.Text class="card-text">
-                    <a class = "btn btn-info">
+                    {/* <a class = "btn btn-info">
                         Add To Cart 
-                    </a>
+                    </a> */}
                         <p1 class="description-p1">{menuItem.description}</p1>
                         <p1 class="price-p1">{menuItem.price}</p1>
                         <img id="menu-cart-img" src={ require(`../breakfastImages/img${i}.jpg`).default } /> 

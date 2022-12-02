@@ -7,3 +7,23 @@
 #button {
     font-size: 18px;
 }
+.modal-content {
+    height: 410px;
+    margin-top: 400px;
+}
+.modal-body {
+    font-size: 20px;
+}
+
+#modal-div {
+    margin-bottom: 50px;
+}
+#sign-in-button {
+    margin-top: 50px;
+}
+.modal-text {
+    margin-bottom: 5px;
+}
+#modal-welcome {
+    margin-bottom: 5px;
+}
