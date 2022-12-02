@@ -2,11 +2,14 @@ import React, {useState} from 'react'
 
 
 const SearchBar = () => {
+    const [search, setSearch] = useState('')
 
 
 return (
     <>
-    <h1>search page</h1>
+    <input type = 'text' placeholder='Search....' onChange = {(e) => {setSearch(e.target.value);}}>
+        
+    </input>
     </>
 )
 

@@ -14,6 +14,8 @@ import { cartCreate } from "../api/cart"
 const MenuPage = ({ msgAlert }) => {
     const navigate = useNavigate()
     const [allMenu, setAllMenu] = useState([])
+    const [search, setSearch] = useState("")
+    const [filteredMenu, setFilteredMenu]= useState([])
 
     useEffect(() => {
         menuIndex()
@@ -28,6 +30,22 @@ const MenuPage = ({ msgAlert }) => {
             })
         })
     }, [])
+
+
+    // Search input
+    const handleSearchChange = (e) => {
+        setSearch(e.target.value)
+    }
+
+    useEffect(() => {
+        const filterMenu = allMenu.filter(menuItem => {
+            return menuItem.name.toLowerCase().includes(search.toLowerCase())
+        })
+        setFilteredMenu(filterMenu)
+    },[search])
+
+
+
     //Coffee  map function down here
     let coffeeList = []
     const coffeeFilter = allMenu.filter(elem => {
@@ -40,9 +58,6 @@ const MenuPage = ({ msgAlert }) => {
                 <Card.Header id="card-header">{ menuItem.name }</Card.Header>
                 <Card.Body class="card-body">
                     <Card.Text class="card-text">
-                    <a class = "btn btn-info">
-                        Add To Cart 
-                    </a>
                         <p1 class="description-p1">{menuItem.description}</p1>
                         <p1 class="price-p1">{menuItem.price}</p1>
                         <img id="menu-cart-img" src={ require(`../coffeeImages/img${i}.jpg`).default } /> 
@@ -62,9 +77,6 @@ const MenuPage = ({ msgAlert }) => {
                 <Card.Header id="card-header">{ menuItem.name }</Card.Header>
                 <Card.Body class="card-body">
                     <Card.Text class="card-text">
-                    <a class = "btn btn-info">
-                        Add To Cart 
-                    </a>
                         <p1 class="description-p1">{menuItem.description}</p1>
                         <p1 class="price-p1">{menuItem.price}</p1>
                         <img id="menu-cart-img" src={ require(`../teaImages/img${i}.jpg`).default } /> 
@@ -85,9 +97,6 @@ const MenuPage = ({ msgAlert }) => {
                 <Card.Header id="card-header">{ menuItem.name }</Card.Header>
                 <Card.Body class="card-body">
                     <Card.Text class="card-text">
-                    <a class = "btn btn-info">
-                        Add To Cart 
-                    </a>
                         <p1 class="description-p1">{menuItem.description}</p1>
                         <p1 class="price-p1">{menuItem.price}</p1>
                         <img id="menu-cart-img" src={ require(`../dessertImages/img${i}.jpg`).default } /> 
@@ -108,9 +117,6 @@ const MenuPage = ({ msgAlert }) => {
                 <Card.Header id="card-header">{ menuItem.name }</Card.Header>
                 <Card.Body class="card-body">
                     <Card.Text class="card-text">
-                    <a class = "btn btn-info">
-                        Add To Cart 
-                    </a>
                         <p1 class="description-p1">{menuItem.description}</p1>
                         <p1 class="price-p1">{menuItem.price}</p1>
                         <img id="menu-cart-img" src={ require(`../lunchImages/img${i}.jpg`).default } /> 
@@ -131,9 +137,6 @@ const MenuPage = ({ msgAlert }) => {
                 <Card.Header id="card-header">{ menuItem.name }</Card.Header>
                 <Card.Body class="card-body">
                     <Card.Text class="card-text">
-                    <a class = "btn btn-info">
-                        Add To Cart 
-                    </a>
                         <p1 class="description-p1">{menuItem.description}</p1>
                         <p1 class="price-p1">{menuItem.price}</p1>
                         <img id="menu-cart-img" src={ require(`../breakfastImages/img${i}.jpg`).default } /> 
@@ -174,7 +177,6 @@ const MenuPage = ({ msgAlert }) => {
                 <h3 class="menu-category">BreakFast</h3>
                 <div id="menu-card">
                     {menuBreakfastCards}
-                    
                 </div>
                 <h3 class="menu-category">Lunch</h3>
                 <div id="menu-card">
