@@ -160,11 +160,28 @@ const MenuPage = ({ msgAlert }) => {
                     </Card.Text>
                 </Card.Body>
             </Card>
-        )) 
+        ))
+    
+    // const getFilePath = (type) => {
+    //     switch (type) {
+    //         case 'coffee':
+    //             return 'coffeeImages'
+    //         case 'tea':
+    //             return 'teaImages'
+    //         case 'lunch':
+    //             return 'lunchImages'
+    //         case 'breakfast':
+    //             return 'breakfastImages'
+    //         case 'dessert':
+    //             return 'dessertImages'
+    //         default:
+    //             return 'dessertImages'
+    //     }
+    // }
 
     const getFilteredMenuItem = () => {
-        console.log(filteredMenu)
         return filteredMenu.map((menuItem) => {
+            // const a = getFilePath(menuItem.menu_type, menuItem.itemIndex)
             return (
                 <Card id="card" key={ menuItem.id } style={{ margin: 10 }}>
                     <Card.Header id="card-header">{ menuItem.name }</Card.Header>
@@ -172,7 +189,7 @@ const MenuPage = ({ msgAlert }) => {
                         <Card.Text class="card-text">
                             <p1 class="description-p1">{menuItem.description}</p1>
                             <p1 class="price-p1">{menuItem.price}</p1>
-                            <img id="menu-cart-img" src={ require(`../breakfastImages/img${menuItem.itemIndex}.jpg`).default } /> 
+                            <img id="menu-cart-img" src={ require(`../${menuItem.menu_type}Images/img${menuItem.itemIndex}.jpg`).default } /> 
                         </Card.Text>
                     </Card.Body>
                 </Card>
@@ -229,7 +246,7 @@ const MenuPage = ({ msgAlert }) => {
 					</div>
 					<div id="right-menu-div">
 						<ul id='ul-right-menu-div'>
-                            <li class="list"><button class='list-buttons' onClick={()=> navigate('/search')}>Search</button></li>
+                            {/* <li class="list"><button class='list-buttons' onClick={()=> navigate('/search')}>Search</button></li> */}
 							<li class="list"><button class='list-buttons'  onClick={() => navigate('/cart')}>Cart</button></li>
 						</ul>
 					</div>
