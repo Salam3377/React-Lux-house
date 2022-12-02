@@ -7,9 +7,10 @@ const SearchBar = () => {
 
 return (
     <>
-    <input type = 'text' placeholder='Search....' onChange = {(e) => {setSearch(e.target.value);}}>
-        
-    </input>
+    <form>
+        <label hmtlFor="search"> Search</label>
+        <input type = " text " id = " search " name = "search" onChange ={e => setSearch(e.target.value)} />
+    </form>
     </>
 )
 
