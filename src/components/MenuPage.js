@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { menuIndex } from "../api/menu"
+import { addCartIndex } from "../api/cart"
 import { Card } from 'react-bootstrap'
 import logo from '../logo.png'
 import logoFooter from '../logo-for-footer.png';
@@ -27,7 +28,10 @@ const MenuPage = ({ msgAlert }) => {
             })
         })
     }, [])
-
+    // Add to cart 
+    const addCartClick = (id) => {
+        addCartIndex(id)
+    }
 
     // Search input
     const handleSearchChange = (e) => {
@@ -71,9 +75,9 @@ const MenuPage = ({ msgAlert }) => {
                 <Card.Header id="card-header">{ menuItem.name }</Card.Header>
                 <Card.Body class="card-body">
                     <Card.Text class="card-text">
-                    {/* <a class = "btn btn-info">
+                    <a class = "btn btn-info">
                         Add To Cart 
-                    </a> */}
+                    </a>
                         <p1 class="description-p1">{menuItem.description}</p1>
                         <p1 class="price-p1">{menuItem.price}</p1>
                         <img id="menu-cart-img" src={ require(`../coffeeImages/img${i}.jpg`).default } /> 
@@ -94,9 +98,9 @@ const MenuPage = ({ msgAlert }) => {
                 <Card.Header id="card-header">{ menuItem.name }</Card.Header>
                 <Card.Body class="card-body">
                     <Card.Text class="card-text">
-                    {/* <a class = "btn btn-info">
+                    <button class = "btn btn-info">
                         Add To Cart 
-                    </a> */}
+                    </button>
                         <p1 class="description-p1">{menuItem.description}</p1>
                         <p1 class="price-p1">{menuItem.price}</p1>
                         <img id="menu-cart-img" src={ require(`../teaImages/img${i}.jpg`).default } /> 
@@ -117,9 +121,9 @@ const MenuPage = ({ msgAlert }) => {
                 <Card.Header id="card-header">{ menuItem.name }</Card.Header>
                 <Card.Body class="card-body">
                     <Card.Text class="card-text">
-                    {/* <a class = "btn btn-info">
+                    <a class = "btn btn-info">
                         Add To Cart 
-                    </a> */}
+                    </a>
                         <p1 class="description-p1">{menuItem.description}</p1>
                         <p1 class="price-p1">{menuItem.price}</p1>
                         <img id="menu-cart-img" src={ require(`../dessertImages/img${i}.jpg`).default } /> 
@@ -140,9 +144,9 @@ const MenuPage = ({ msgAlert }) => {
                 <Card.Header id="card-header">{ menuItem.name }</Card.Header>
                 <Card.Body class="card-body">
                     <Card.Text class="card-text">
-                    {/* <a class = "btn btn-info">
+                    <a class = "btn btn-info">
                         Add To Cart 
-                    </a> */}
+                    </a>
                         <p1 class="description-p1">{menuItem.description}</p1>
                         <p1 class="price-p1">{menuItem.price}</p1>
                         <img id="menu-cart-img" src={ require(`../lunchImages/img${i}.jpg`).default } /> 
@@ -163,9 +167,9 @@ const MenuPage = ({ msgAlert }) => {
                 <Card.Header id="card-header">{ menuItem.name }</Card.Header>
                 <Card.Body class="card-body">
                     <Card.Text class="card-text">
-                    {/* <a class = "btn btn-info">
+                    <a onClick={() => addCartClick(menuItem.id)}  class = "btn btn-info">
                         Add To Cart 
-                    </a> */}
+                    </a>
                         <p1 class="description-p1">{menuItem.description}</p1>
                         <p1 class="price-p1">{menuItem.price}</p1>
                         <img id="menu-cart-img" src={ require(`../breakfastImages/img${i}.jpg`).default } /> 
