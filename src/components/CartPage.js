@@ -5,6 +5,7 @@ import '../components/menuPage.css'
 import './cart.css'
 import { useNavigate } from "react-router-dom"
 import apiUrl from '../apiConfig'
+import logo from '../logo.png';
 
 const Cart = ({msgAlert}) => {
     const [allCart, setAllCart] = useState([])
@@ -40,10 +41,20 @@ const Cart = ({msgAlert}) => {
         console.log(cartCards, 'cart items here')
     return (
         <>
-            <h1>Cart Page</h1>
-            <button onClick={()=> {navigate(-1)}}>continue shopping</button>
-            <div>
-                {cartCards}
+            <div id="cart-body-div">
+                <div id="cart-header">
+                    <button id="continue-shopping-btn" onClick={()=> {navigate(-1)}}><i class="arrow left"></i> Continue shopping</button>
+                    <img id='cart-logo-img' src={logo} alt="logo" />
+                </div>
+                <div id="cart-status">
+                    <h1>Your Cart</h1>
+                </div>
+                <div id="cart-box-div">
+                    <div id="cart-items-div">
+                        {cartCards}
+                    </div>
+                    {/* <div id="cart-payment-info"></div> */}
+                </div>
             </div>
         </>
     )
