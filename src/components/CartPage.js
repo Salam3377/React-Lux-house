@@ -2,9 +2,12 @@ import React, { useEffect, useState } from "react"
 import { cartIndex } from "../api/cart"
 import { Card } from 'react-bootstrap'
 import '../components/menuPage.css'
+import './cart.css'
+import { useNavigate } from "react-router-dom"
 
 const Cart = ({msgAlert}) => {
     const [allCart, setAllCart] = useState([])
+    const navigate = useNavigate()
 
     useEffect(() => {
         cartIndex()
@@ -25,7 +28,6 @@ const Cart = ({msgAlert}) => {
             <Card.Header id="card-header">{ Item.name }</Card.Header>
             <Card.Body class="card-body">
                 <Card.Text class="card-text">
-                    {/* <p1 class="description-p1">{Item.quantity}</p1> */}
                     <p1 class="description-p1">{Item.description}</p1>
                     <p1 class="price-p1">{Item.price}</p1>
                 </Card.Text>
@@ -36,6 +38,7 @@ const Cart = ({msgAlert}) => {
     return (
         <>
             <h1>Cart Page</h1>
+            <button onClick={()=> {navigate(-1)}}>continue shopping</button>
             <div>
                 {cartCards}
             </div>

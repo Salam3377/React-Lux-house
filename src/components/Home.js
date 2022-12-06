@@ -117,7 +117,7 @@ const Home = (props) => {
 					</div>
 					<div id="right-menu-div">
 						<ul id='ul-right-menu-div'>
-							<li class="list"><button class='list-buttons' onClick={()=> navigate('/search')}>Search</button></li>
+							
 							<li class="list"><button class='list-buttons' onClick={()=> {setEditModalShow(true)}}>Profile</button></li>
 							<li class="list"><button class='list-buttons' onClick={()=> navigate('/cart')}>Cart</button></li>
 						</ul>

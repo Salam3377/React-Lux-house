@@ -36,9 +36,6 @@ const MenuPage = ({ msgAlert }) => {
     // Search input
     const handleSearchChange = (e) => {
         const input = e.target.value.toLowerCase()
-        // const filterMenu = allMenu.filter(menuItem => {
-        //     return menuItem.name.toLowerCase().includes(search.toLowerCase())
-        // })
         const filteredItems = []
         let index = 0
         let currMenuType = ''
@@ -75,9 +72,9 @@ const MenuPage = ({ msgAlert }) => {
                 <Card.Header id="card-header">{ menuItem.name }</Card.Header>
                 <Card.Body class="card-body">
                     <Card.Text class="card-text">
-                    <a onClick={() => addCartClick(menuItem.id)} class = "btn btn-info">
+                    <button class='add-to-cart-btn' onClick={() => addCartClick(menuItem.id)} type='button' >
                         Add To Cart 
-                    </a>
+                    </button>
                         <p1 class="description-p1">{menuItem.description}</p1>
                         <p1 class="price-p1">{menuItem.price}</p1>
                         <img id="menu-cart-img" src={ require(`../coffeeImages/img${i}.jpg`).default } /> 
@@ -98,7 +95,7 @@ const MenuPage = ({ msgAlert }) => {
                 <Card.Header id="card-header">{ menuItem.name }</Card.Header>
                 <Card.Body class="card-body">
                     <Card.Text class="card-text">
-                    <button onClick={() => addCartClick(menuItem.id)} class = "btn btn-info">
+                    <button class='add-to-cart-btn' onClick={() => addCartClick(menuItem.id)} type='button' >
                         Add To Cart 
                     </button>
                         <p1 class="description-p1">{menuItem.description}</p1>
@@ -121,9 +118,9 @@ const MenuPage = ({ msgAlert }) => {
                 <Card.Header id="card-header">{ menuItem.name }</Card.Header>
                 <Card.Body class="card-body">
                     <Card.Text class="card-text">
-                    <a onClick={() => addCartClick(menuItem.id)} class = "btn btn-info">
+                    <button class='add-to-cart-btn' onClick={() => addCartClick(menuItem.id)} type='button' >
                         Add To Cart 
-                    </a>
+                    </button>
                         <p1 class="description-p1">{menuItem.description}</p1>
                         <p1 class="price-p1">{menuItem.price}</p1>
                         <img id="menu-cart-img" src={ require(`../dessertImages/img${i}.jpg`).default } /> 
@@ -144,9 +141,9 @@ const MenuPage = ({ msgAlert }) => {
                 <Card.Header id="card-header">{ menuItem.name }</Card.Header>
                 <Card.Body class="card-body">
                     <Card.Text class="card-text">
-                    <a onClick={() => addCartClick(menuItem.id)} class = "btn btn-info">
+                    <button class='add-to-cart-btn' onClick={() => addCartClick(menuItem.id)} type='button' >
                         Add To Cart 
-                    </a>
+                    </button>
                         <p1 class="description-p1">{menuItem.description}</p1>
                         <p1 class="price-p1">{menuItem.price}</p1>
                         <img id="menu-cart-img" src={ require(`../lunchImages/img${i}.jpg`).default } /> 
@@ -167,9 +164,9 @@ const MenuPage = ({ msgAlert }) => {
                 <Card.Header id="card-header">{ menuItem.name }</Card.Header>
                 <Card.Body class="card-body">
                     <Card.Text class="card-text">
-                    <a onClick={() => addCartClick(menuItem.id)}  class = "btn btn-info">
+                    <button class='add-to-cart-btn' onClick={() => addCartClick(menuItem.id)} type='button' >
                         Add To Cart 
-                    </a>
+                    </button>
                         <p1 class="description-p1">{menuItem.description}</p1>
                         <p1 class="price-p1">{menuItem.price}</p1>
                         <img id="menu-cart-img" src={ require(`../breakfastImages/img${i}.jpg`).default } /> 
@@ -262,7 +259,6 @@ const MenuPage = ({ msgAlert }) => {
 					</div>
 					<div id="right-menu-div">
 						<ul id='ul-right-menu-div'>
-                            {/* <li class="list"><button class='list-buttons' onClick={()=> navigate('/search')}>Search</button></li> */}
 							<li class="list"><button class='list-buttons'  onClick={() => navigate('/cart')}>Cart</button></li>
 						</ul>
 					</div>
