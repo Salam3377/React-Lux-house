@@ -7,6 +7,7 @@ import logoFooter from '../logo-for-footer.png';
 import '../components/home.css'
 import '../components/menuPage.css'
 import { useNavigate } from 'react-router-dom'
+import apiUrl from '../apiConfig'
 
 
 const MenuPage = ({ msgAlert }) => {
@@ -19,6 +20,7 @@ const MenuPage = ({ msgAlert }) => {
         menuIndex()
         .then(res => {
             setAllMenu(res.data.product)
+            console.log(allMenu, "menu items")
         })
         .catch((error) => {
             msgAlert({
@@ -77,7 +79,7 @@ const MenuPage = ({ msgAlert }) => {
                     </button>
                         <p1 class="description-p1">{menuItem.description}</p1>
                         <p1 class="price-p1">{menuItem.price}</p1>
-                        <img id="menu-cart-img" src={ require(`../coffeeImages/img${i}.jpg`).default } /> 
+                        <img id="menu-cart-img" src={`${apiUrl}${menuItem.image}`} />
                     </Card.Text>
                 </Card.Body>
             </Card>
@@ -100,7 +102,7 @@ const MenuPage = ({ msgAlert }) => {
                     </button>
                         <p1 class="description-p1">{menuItem.description}</p1>
                         <p1 class="price-p1">{menuItem.price}</p1>
-                        <img id="menu-cart-img" src={ require(`../teaImages/img${i}.jpg`).default } /> 
+                        <img id="menu-cart-img" src={`${apiUrl}${menuItem.image}`} /> 
                     </Card.Text>
                 </Card.Body>
             </Card>
@@ -123,7 +125,7 @@ const MenuPage = ({ msgAlert }) => {
                     </button>
                         <p1 class="description-p1">{menuItem.description}</p1>
                         <p1 class="price-p1">{menuItem.price}</p1>
-                        <img id="menu-cart-img" src={ require(`../dessertImages/img${i}.jpg`).default } /> 
+                        <img id="menu-cart-img" src={`${apiUrl}${menuItem.image}`} />
                     </Card.Text>
                 </Card.Body>
             </Card>
@@ -146,7 +148,7 @@ const MenuPage = ({ msgAlert }) => {
                     </button>
                         <p1 class="description-p1">{menuItem.description}</p1>
                         <p1 class="price-p1">{menuItem.price}</p1>
-                        <img id="menu-cart-img" src={ require(`../lunchImages/img${i}.jpg`).default } /> 
+                        <img id="menu-cart-img" src={`${apiUrl}${menuItem.image}`} /> 
                     </Card.Text>
                 </Card.Body>
             </Card>
@@ -159,6 +161,7 @@ const MenuPage = ({ msgAlert }) => {
             breakfastList.push(elem)
         }
     })
+    console.log(breakfastList, "list breakfast is here")
     const menuBreakfastCards = breakfastList.map((menuItem, i) => (
             <Card id="card" key={ menuItem.id } style={{ margin: 10 }}>
                 <Card.Header id="card-header">{ menuItem.name }</Card.Header>
@@ -169,32 +172,14 @@ const MenuPage = ({ msgAlert }) => {
                     </button>
                         <p1 class="description-p1">{menuItem.description}</p1>
                         <p1 class="price-p1">{menuItem.price}</p1>
-                        <img id="menu-cart-img" src={ require(`../breakfastImages/img${i}.jpg`).default } /> 
+                        <img id="menu-cart-img" src={`${apiUrl}${menuItem.image}`} />
                     </Card.Text>
                 </Card.Body>
             </Card>
         ))
     
-    // const getFilePath = (type) => {
-    //     switch (type) {
-    //         case 'coffee':
-    //             return 'coffeeImages'
-    //         case 'tea':
-    //             return 'teaImages'
-    //         case 'lunch':
-    //             return 'lunchImages'
-    //         case 'breakfast':
-    //             return 'breakfastImages'
-    //         case 'dessert':
-    //             return 'dessertImages'
-    //         default:
-    //             return 'dessertImages'
-    //     }
-    // }
-
     const getFilteredMenuItem = () => {
         return filteredMenu.map((menuItem) => {
-            // const a = getFilePath(menuItem.menu_type, menuItem.itemIndex)
             return (
                 <Card id="card" key={ menuItem.id } style={{ margin: 10 }}>
                     <Card.Header id="card-header">{ menuItem.name }</Card.Header>
@@ -202,7 +187,7 @@ const MenuPage = ({ msgAlert }) => {
                         <Card.Text class="card-text">
                             <p1 class="description-p1">{menuItem.description}</p1>
                             <p1 class="price-p1">{menuItem.price}</p1>
-                            <img id="menu-cart-img" src={ require(`../${menuItem.menu_type}Images/img${menuItem.itemIndex}.jpg`).default } /> 
+                            <img id="menu-cart-img" src={`${apiUrl}${menuItem.image}`} />
                         </Card.Text>
                     </Card.Body>
                 </Card>

@@ -4,6 +4,7 @@ import { Card } from 'react-bootstrap'
 import '../components/menuPage.css'
 import './cart.css'
 import { useNavigate } from "react-router-dom"
+import apiUrl from '../apiConfig'
 
 const Cart = ({msgAlert}) => {
     const [allCart, setAllCart] = useState([])
@@ -23,13 +24,15 @@ const Cart = ({msgAlert}) => {
         })
     }, [])
 
-    const cartCards = allCart.map((Item, i) => (
-        <Card id="card" key={ Item.id } style={{ margin: 10 }}>
-            <Card.Header id="card-header">{ Item.name }</Card.Header>
+    const cartCards = allCart.map((item, i) => (
+        <Card id="card" key={ item.id } style={{ margin: 10 }}>
+            <Card.Header id="card-header">{ item.name }</Card.Header>
             <Card.Body class="card-body">
                 <Card.Text class="card-text">
-                    <p1 class="description-p1">{Item.description}</p1>
-                    <p1 class="price-p1">{Item.price}</p1>
+                    <p1 class="description-p1">{item.description}</p1>
+                    <p1 class="price-p1">{item.price}</p1>
+                    <img id="menu-cart-img" src={`${apiUrl}${item.image}`} />
+                    {/* <img id="menu-cart-img" src={ require(`../breakfastImages/img${i}.jpg`).default } /> */}
                 </Card.Text>
             </Card.Body>
         </Card>

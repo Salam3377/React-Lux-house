@@ -5,7 +5,6 @@ import { v4 as uuid } from 'uuid'
 
 // import AuthenticatedRoute from './components/shared/AuthenticatedRoute'
 import AutoDismissAlert from './components/shared/AutoDismissAlert/AutoDismissAlert'
-import Header from './components/shared/Header'
 import RequireAuth from './components/shared/RequireAuth'
 import Home from './components/Home'
 import SignUp from './components/auth/SignUp'
@@ -18,8 +17,6 @@ import MenuPage from './components/MenuPage'
 import About from './components/AboutPage'
 import CartPage from './components/CartPage'
 import Contact from './components/Contact'
-
-import SearchBar from './components/SearchPage'
 
 const App = () => {
 
@@ -50,7 +47,6 @@ const App = () => {
 
 		return (
 			<Fragment>
-				{/* <Header user={user} /> */}
 				<Routes>
 					<Route path='/' element={<Home msgAlert={msgAlert} user={user} setUser={setUser} />} />
 					<Route
@@ -98,12 +94,6 @@ const App = () => {
 		  	path='/cart'
 			element={
 				<CartPage msgAlert={msgAlert}/>
-			} 
-		  />
-		  <Route
-		  	path='/search'
-			element={
-				<SearchBar msgAlert={msgAlert}/>
 			} 
 		  />
 				</Routes>
