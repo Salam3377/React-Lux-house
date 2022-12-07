@@ -3,17 +3,18 @@
 ## General info
 
 For this project we used React as frontend(client side) and Django as backend(API).  
-
+<!-- acknowledge that we are reading the front end documentation, add a link to the other repo  -->
 
 
 ## About
-
+<!-- is basically your user stories as a sentence -->
+<!-- also made the same spelling mistake -->
    The Lux-House app is a website of a resataurant with its specialties of coffee and tea. 
    The goal is to create that app with great design and the necessary functionality. 
    Users will be able to sign up, log in and log out. When users are signed in, they could add items to cart, and leave the comment reviews.
 
 ## Team
-
+<!--  sean is not the git manager -->
 - Sean Pham (Full Stack Developer, Git Manager)
 - Abdusalam Abdusalamov (Full Stack Developer, Git Manager)
 
@@ -39,10 +40,11 @@ For this project we used React as frontend(client side) and Django as backend(AP
   - [Axios](https://axios-http.com/docs/intro)
    - Axios is a promise-based HTTP Client for node.js and the browser.
 
-
+<!-- white space -->
 
 ## User Stories
-
+<!-- browse list of items ?  -->
+<!-- see price/ description of a single item ? -->
 - sign up
 - sign in
 - sign out 
@@ -54,7 +56,7 @@ For this project we used React as frontend(client side) and Django as backend(AP
 
 - update quantity of an item added to cart
 - to be able to search through menu
-
+<!-- ^ not a real stretch since it's a critical part of existing user stories as written -->
 
 ## Wireframes
 
@@ -65,7 +67,7 @@ For this project we used React as frontend(client side) and Django as backend(AP
 ![comment](https://user-images.githubusercontent.com/111256827/203081905-edc0b992-da8f-4912-bd14-3d4ef2e197e0.png)
 
 ![about](https://user-images.githubusercontent.com/111256827/203081915-ee474d52-610a-456b-bfa0-4aebbcef1a94.png)
-
+<!-- erd's are a back-end entity because it describes the db architecture -->
 # ERD 
 
 ![_ERD_](https://user-images.githubusercontent.com/111256827/203136165-74b76e9f-b32a-4ac0-9e28-969e369ae354.png)

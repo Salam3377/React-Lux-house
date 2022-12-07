@@ -6,7 +6,7 @@ import { signUp, signIn } from '../api/auth'
 import ProfileModal from './ProfileModal';
 import { useNavigate } from 'react-router-dom'
 import React, {useState, useEffect} from 'react'
-
+// unused import 
 const Home = (props) => {
 	const [editModalShow, setEditModalShow] = useState(false)
 	const [updated, setUpdated] = useState(false)
@@ -19,7 +19,7 @@ const Home = (props) => {
 	const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 	const [passwordConfirmation, setPasswordConfirmation] = useState('')
-
+	// all of the above needs to be regrouped so we have all of our state at the top, then we have props, then additional imports, before any functions ( looking at trigger refresh and handle close, navigate etc. )
 	const handleUpdateSignIn = (event) => {
         event.preventDefault()
 		console.log('the props', props)

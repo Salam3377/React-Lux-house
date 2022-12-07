@@ -9,7 +9,7 @@ import '../components/menuPage.css'
 import { useNavigate } from 'react-router-dom'
 import apiUrl from '../apiConfig'
 
-
+// so many card elements defined in this file, they should be their own component(s)
 const MenuPage = ({ msgAlert }) => {
     const navigate = useNavigate()
     const [allMenu, setAllMenu] = useState([])

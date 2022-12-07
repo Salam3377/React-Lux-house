@@ -6,7 +6,7 @@ import './cart.css'
 import { useNavigate } from "react-router-dom"
 import apiUrl from '../apiConfig'
 import logo from '../logo.png';
-
+// this is react: we don't have pages we have components 
 const Cart = ({msgAlert}) => {
     const [allCart, setAllCart] = useState([])
     const navigate = useNavigate()

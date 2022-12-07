@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import logo from '../logo.png'
 import logoFooter from '../logo-for-footer.png';
 import { useEffect, useState } from "react";
-
+// unused imports
 const Contact = (props) => {
 	
 	const navigate = useNavigate()
@@ -24,7 +24,7 @@ const Contact = (props) => {
 		  });
 		  e.target.reset()
 	  };
-
+// Maow indentation issues above 
 
 	return (
     <>
@@ -47,7 +47,7 @@ const Contact = (props) => {
         </div>
 		<div id = "top0">
 			<div id = "top1">
-        	
+        	{/* indentation and white space ,... through out */}
                 	<h2 id ='title'>Contact Us</h2>
                 	<p id = 'text'>We love coffee. Reach out and let us know about your experience at Lux-house. 
                 If you are seeking to be part of our team,
@@ -92,4 +92,3 @@ const Contact = (props) => {
 }
 
 export default Contact
-

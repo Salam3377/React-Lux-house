@@ -19,7 +19,7 @@ import CartPage from './components/CartPage'
 import Contact from './components/Contact'
 
 const App = () => {
-
+// inconsistent indentation
   const [user, setUser] = useState(null)
   const [msgAlerts, setMsgAlerts] = useState([])
 
@@ -29,6 +29,7 @@ const App = () => {
     console.log('clear user ran')
     setUser(null)
   }
+// inconsistent indentation
 
 	const deleteAlert = (id) => {
 		setMsgAlerts((prevState) => {
@@ -41,11 +42,13 @@ const App = () => {
 		setMsgAlerts(() => {
 			return (
 				[{ heading, message, variant, id }]
-      )
+      ) // inconsistent indentation
+
 		})
 	}
 
-		return (
+		return ( // inconsistent indentation you keep jumping between 2 and 4 spaces per indent - pick oone for the whole app and stick with it 
+
 			<Fragment>
 				<Routes>
 					<Route path='/' element={<Home msgAlert={msgAlert} user={user} setUser={setUser} />} />
@@ -57,12 +60,15 @@ const App = () => {
 						path='/sign-in'
 						element={<SignIn msgAlert={msgAlert} setUser={setUser} />}
 					/>
-          <Route
+          <Route // inconsistent indentation
+
             path='/sign-out'
             element={
-              <RequireAuth user={user}>
+              <RequireAuth user={user}> // inconsistent indentation
+
                 <SignOut msgAlert={msgAlert} clearUser={clearUser} user={user} />
-              </RequireAuth>
+              </RequireAuth> // inconsistent indentation
+
             }
           />
           <Route
