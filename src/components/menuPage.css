@@ -77,3 +77,11 @@
     font-size: 23px;
     color: red;
 }
+
+#search-bar {
+    text-align: center;
+    margin-top: 15px;
+}
+#search {
+    width: 275px;
+}

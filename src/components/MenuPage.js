@@ -261,9 +261,9 @@ const MenuPage = ({ msgAlert }) => {
                     <img id="menu-img" src="https://thepointsguy.global.ssl.fastly.net/uk/originals/2021/09/20210930_Mondrian-Shoreditch-Hotel-London-Accor_BSmithson-86.jpg" />
                 </div>
         <div id="body-div">
-                <form class = "search-bar">
-                    <label hmtlFor="search" > Search</label>
-                    <input placeholder="Search..." type = " text " id = " search " name = "search" onChange ={handleSearchChange} />
+                <form id="search-bar">
+                    {/* <label hmtlFor="search" > Search</label> */}
+                    <input placeholder="Search..." type = " text " id = "search" name = "search" onChange ={handleSearchChange} />
                 </form>
                 {renderMenuOrSearchResult()}
         </div>

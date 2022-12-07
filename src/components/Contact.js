@@ -60,7 +60,7 @@ const Contact = (props) => {
             	<label class='contact-label'> Your Name</label>
                 	<input class='text-input' type = "text" name = "name" placeholder="your name..." ></input>
             	<label class='contact-label'> Email</label>
-                	<input class='text-input' type = "text" name = "Email" placeholder="your name..." ></input>
+                	<input class='text-input' type = "text" name = "Email" placeholder="your email..." ></input>
             	<label class='contact-label'>Message</label>
                 	<textarea class='text-input' name="message" placeholder="message...">
 
