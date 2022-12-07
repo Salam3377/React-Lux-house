@@ -1,7 +1,7 @@
 import apiUrl from '../apiConfig'
 import axios from 'axios'
 
-
+// how can you get a user's cart if they aren't signed in ? 
 export const cartIndex = () => {
     return axios({
         method: "GET",
@@ -11,7 +11,7 @@ export const cartIndex = () => {
         //}
     })
 }
-
+// bad naming convention v
 export const addCartIndex = (id) => {
     return axios({
         method: "POST",

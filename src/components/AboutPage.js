@@ -6,11 +6,12 @@ import logoFooter from '../logo-for-footer.png';
 const About = (props) => {
 	console.log('props in about', props)
 	const navigate = useNavigate()
+// this is react: we don't have pages we have components 
 
-	return (
+	return (// more bad indentation 
         <>
-			<div id="body-div">
-			<div id='header-box'>
+			<div id="body-div"> 
+			<div id='header-box'> here
 					<div id="header-div">
 						<img id='logo-img' src={logo} alt="logo" />
 						<h1 id='lux-house-text'>Lux-House</h1>
@@ -23,7 +24,7 @@ const About = (props) => {
 					</div>
 				</div>
 				<div id="menu-line-div">
-                        <ul id='ul-menu-line-div'>
+                        <ul id='ul-menu-line-div'>here
 							<li class="list-2"><button class='list-buttons' onClick={() => navigate('/')}>Home</button></li>
 							<li class="list-2"><button class='list-buttons' onClick={() => navigate('/menu')}>Menu</button></li>
 							<li class="list-2"><button class='list-buttons' onClick={() => navigate('/about')}>About Us</button></li>
